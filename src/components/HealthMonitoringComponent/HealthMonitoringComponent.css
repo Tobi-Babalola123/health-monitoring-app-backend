@@ -1,0 +1,50 @@
+.health-monitoring-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 20px;
+  background-color: #f5f5f5;
+}
+
+.text-section {
+  max-width: 60%;
+}
+
+.text-section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.text-section p {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.text-section ul {
+  margin-bottom: 15px;
+  padding-left: 20px;
+}
+
+.get-started-button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #28a745; /* Green */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.get-started-button:hover {
+  background-color: #218838; /* Darker green */
+}
+
+.image-section {
+  max-width: 35%;
+}
+
+.medical-app-image {
+  width: 100%;
+  height: auto;
+  transform: rotate(-5deg); /* Slant effect */
+}

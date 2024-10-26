@@ -1,0 +1,136 @@
+.custom-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer-section {
+  width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #28a745;
+}
+
+.company-address {
+  margin-bottom: 5rem;
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: center; /* Center align the icons */
+  margin-top: 10px; /* Add some space above */
+}
+
+.social-media-icons a {
+  color: #28a745; /* Change to your preferred color */
+  margin: 0 10px; /* Space between icons */
+  font-size: 24px; /* Icon size */
+  text-decoration: none; /* Remove underline */
+}
+
+.social-media-icons a:hover {
+  color: #218838; /* Darker green on hover */
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section ul,
+.footer-section li {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+.health-details {
+  color: white;
+}
+
+.footer-section a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #28a745;
+  text-decoration: underline;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+/* Adjustments for site map links under support */
+.site-map-links {
+  padding-top: 10px;
+}
+
+/* Adjustments for news categories under address */
+.news-links {
+  padding-top: 10px;
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.newsletter-form button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 0;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.newsletter-form button:hover {
+  background-color: #218838;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 90%;
+    text-align: center;
+  }
+}

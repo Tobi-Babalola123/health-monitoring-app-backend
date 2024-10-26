@@ -1,0 +1,29 @@
+.heart-card {
+  width: 150px; /* Reduced width */
+  height: 150px; /* Reduced height */
+  background-color: #fff; /* Background color */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px; /* Adjusted padding */
+  cursor: pointer;
+}
+
+.beating-heart {
+  width: 80px; /* Adjusted size of the heart icon */
+  height: auto;
+  animation: beat 1s infinite; /* Add beating effect */
+}
+
+/* Optional: Animation for beating effect */
+@keyframes beat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}

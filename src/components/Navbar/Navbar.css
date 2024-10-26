@@ -1,0 +1,31 @@
+/* src/components/Navbar.css */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* overflow-x: hidden; */
+}
+
+.navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Space between links */
+}
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.talk-to-doctor {
+  padding: 10px 15px;
+  background-color: #007bff; /* Button color */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
