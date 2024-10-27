@@ -1,0 +1,53 @@
+.spotlight-page {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.spotlight-header {
+  text-align: center;
+  padding: 20px;
+  background: #e0f7fa;
+}
+
+.spotlight-header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.spotlight-header h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.health-surveillance,
+.nas-surveillance,
+.population-health,
+.antimicrobial-benchmarking,
+.public-policy,
+.opioid-rehabilitation {
+  margin: 40px 0;
+}
+
+.surveillance-item,
+.recommendation,
+.health-item,
+.comparison,
+.policy-item {
+  margin: 20px 0;
+}
+
+.spotlight-footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background: #004d40;
+  color: white;
+}
+
+.footer-section {
+  width: 30%;
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+}

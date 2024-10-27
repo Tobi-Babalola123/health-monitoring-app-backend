@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 // import ChartComponent from "../ChartComponent/ChartComponent";
@@ -18,19 +19,66 @@ const fetchHealthData = async () => {
     const response = await axios.get(
       `${process.env.REACT_APP_BASE_URL}/api/health-data`
     );
-    // Process the response data here
     console.log("Health data:", response.data);
+    return response.data; // Ensure data is returned
   } catch (error) {
     console.error("Error fetching health data:", error);
+    return []; // Return empty array on error
   }
 };
 
 const Dashboard = () => {
+  const cards = [
+    {
+      image: "/img/team.jpg",
+      heading: "ABOUT US",
+      text: "Learn more about our mission to improve health and well-being worldwide.",
+      buttonText: "Read More",
+      backText:
+        "At our core, we strive to enhance health outcomes globally. Our dedicated team works tirelessly to innovate and provide the best health monitoring solutions tailored for everyone.",
+    },
+    {
+      image: "/img/healthcaretech.jpg",
+      heading: "HEALTH",
+      text: "Stay informed on the latest in healthcare technology and innovations.",
+      buttonText: "Explore Health",
+      backText:
+        "Embrace the future of healthcare with cutting-edge technology. Stay updated with trends and innovations that are revolutionizing patient care and health management.",
+    },
+    {
+      image: "/img/youngman.jpg",
+      heading: "LATEST NEWS",
+      text: "Get updates on the latest news in health monitoring.",
+      buttonText: "Read News",
+      backText:
+        "Stay informed about the latest trends and breakthroughs in health monitoring and technology. Our news section is updated regularly to keep you in the loop.",
+    },
+    {
+      image: "/img/patientcare.jpg",
+      heading: "OUR SERVICES",
+      text: "Discover our range of health monitoring services designed to keep you safe.",
+      buttonText: "Learn More",
+      backText:
+        "We offer a variety of health monitoring services to cater to your needs. From regular check-ups to advanced diagnostics, our services ensure you stay healthy and informed.",
+    },
+    {
+      image: "/img/customer support.jpg",
+      heading: "SUPPORT",
+      text: "Need help? Reach out to our customer support team anytime.",
+      buttonText: "Contact Us",
+      backText:
+        "Our dedicated support team is here to assist you 24/7. Whether you have questions about our services or need technical assistance, we’re just a message away!",
+    },
+  ];
   const [showModal, setShowModal] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [isScrolled, setIsScrolled] = useState(false);
   const [healthData, setHealthData] = useState([]);
   const [aiResponse, setAIResponse] = useState("");
+  const cardRefs = useRef([]);
+  const [visibleCards, setVisibleCards] = useState(
+    Array(cards.length).fill(false)
+  );
 
   useEffect(() => {
     const getHealthData = async () => {
@@ -49,6 +97,32 @@ const Dashboard = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry, index) => {
+          if (entry.isIntersecting) {
+            setVisibleCards((prev) => {
+              const newVisibleCards = [...prev];
+              newVisibleCards[index] = true; // Set to true when in view
+              return newVisibleCards;
+            });
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    cardRefs.current.forEach((card) => {
+      if (card) {
+        observer.observe(card);
+      }
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [cards.length]);
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
@@ -95,24 +169,24 @@ const Dashboard = () => {
         />
         <ul className="navlinks">
           <li className="dropdown">
-            <a href="#" className="dropbtn">
+            <Link to="/" className="dropbtn">
               Home
-            </a>
+            </Link>
           </li>
           <li className="dropdown">
-            <a href="#" className="dropbtn">
+            <Link to="/spotlight" className="dropbtn">
               Spotlight
-            </a>
+            </Link>
           </li>
           <li className="dropdown">
-            <a href="#" className="dropbtn">
+            <Link to="/company" className="dropbtn">
               Company
-            </a>
+            </Link>
           </li>
           <li className="account-icon">
-            <a href="#" className="nav-icon">
+            <Link to="#" className="nav-icon">
               <FontAwesomeIcon icon={faUser} />
-            </a>
+            </Link>
           </li>
           <li>
             <button className="btn-doctor">Talk to a Doctor</button>
@@ -252,70 +326,20 @@ const Dashboard = () => {
 
       {/* Cards Section */}
       <div className="cards-section specific-section">
-        <CardComponent
-          className="flippable-card"
-          image={`${process.env.PUBLIC_URL}/img/team.jpg`}
-          heading="ABOUT US"
-          text="Learn more about our mission to improve health and well-being worldwide."
-          buttonText="Read More"
-          backText="At our core, we strive to enhance health outcomes globally. Our dedicated team works tirelessly to innovate and provide the best health monitoring solutions tailored for everyone."
-        />
-
-        <CardComponent
-          className="flippable-card"
-          image={`${process.env.PUBLIC_URL}/img/healthcaretech.jpg`}
-          heading="HEALTH"
-          text="Stay informed on the latest in healthcare technology and innovations."
-          buttonText="Explore Health"
-          backText="Embrace the future of healthcare with cutting-edge technology. Stay updated with trends and innovations that are revolutionizing patient care and health management."
-        />
-
-        <CardComponent
-          className="flippable-card"
-          image={`${process.env.PUBLIC_URL}/img/youngman.jpg`}
-          heading="LATEST NEWS"
-          text="Get updates on the latest news in health monitoring."
-          buttonText="Read News"
-          backText="Stay informed about the latest trends and breakthroughs in health monitoring and technology. Our news section is updated regularly to keep you in the loop."
-        />
-
-        <CardComponent
-          className="flippable-card"
-          image={`${process.env.PUBLIC_URL}/img/patientcare.jpg`} // Placeholder for services-related image
-          heading="OUR SERVICES"
-          text="Discover our range of health monitoring services designed to keep you safe."
-          buttonText="Learn More"
-          backText="We offer a variety of health monitoring services to cater to your needs. From regular check-ups to advanced diagnostics, our services ensure you stay healthy and informed."
-        />
-
-        <CardComponent
-          className="flippable-card"
-          image={`${process.env.PUBLIC_URL}/img/customer support.jpg`} // Placeholder for support-related image
-          heading="SUPPORT"
-          text="Need help? Reach out to our customer support team anytime."
-          buttonText="Contact Us"
-          backText="Our dedicated support team is here to assist you 24/7. Whether you have questions about our services or need technical assistance, we’re just a message away!"
-        />
-      </div>
-
-      {/* Button for AI Functionality */}
-      {/* <div className="small-cards">
-        <div className="input-container">
-          <input
-            type="text"
-            placeholder="Enter User ID or Name"
-            value={inputValue}
-            onChange={handleInputChange}
-            className="health-input"
+        {cards.map((card, index) => (
+          <CardComponent
+            key={index}
+            ref={(el) => (cardRefs.current[index] = el)}
+            heading={card.heading}
+            icon={card.icon}
+            text={card.text}
+            buttonText={card.buttonText}
+            image={`${process.env.PUBLIC_URL}${card.image}`}
+            backText={card.backText}
+            visible={visibleCards[index]} // Pass visibility state
           />
-          <button className="health-btn" onClick={handleButtonClick}>
-            Check Health Status
-          </button>
-          <button className="ai-btn" onClick={handleAIFunctionality}>
-            Show AI Functionality
-          </button>
-        </div>
-      </div> */}
+        ))}
+      </div>
 
       {/* Modal Component for Health Status */}
       {showModal && (

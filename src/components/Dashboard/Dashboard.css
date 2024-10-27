@@ -139,6 +139,17 @@
   background-color: #0056b3; /* Darker shade on hover */
 }
 
+.flippable-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.flippable-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .dropdown {
   position: relative;
 }
@@ -450,6 +461,14 @@
   gap: 20px; /* Add spacing between items */
   padding: 20px; /* Optional: add padding around the section */
   margin-right: 39px;
+}
+
+.card-component {
+  transition: transform 0.5s ease; /* Optional: add a transition effect on the card */
+}
+
+.card-component.flipped {
+  transform: rotateY(180deg); /* Optional: flip animation */
 }
 
 .flippable-card {

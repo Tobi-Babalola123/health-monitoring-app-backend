@@ -27,7 +27,7 @@ const HeartCardComponent = ({ image, handleAIResponse }) => {
         />
       </div>
 
-      <div className="input-section">
+      {/* <div className="input-section">
         <input
           type="text"
           placeholder="Ask about your health"
@@ -38,7 +38,7 @@ const HeartCardComponent = ({ image, handleAIResponse }) => {
         <button onClick={handleAskAI} className="ask-ai-button">
           Ask AI
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
