@@ -1,0 +1,154 @@
+.custom-footer {
+  background-color: #333;
+  color: #fff;
+  padding: 40px 20px;
+  font-family: "Poppins", serif;
+}
+
+/* Main footer container */
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px; /* Adjust spacing if needed */
+  background-color: #333; /* Assuming a dark background */
+  color: #fff;
+}
+
+/* Footer section styling */
+.footer-section {
+  flex: 1;
+  padding: 10px;
+}
+
+/* Newsletter section */
+.footer-section.newsletter {
+  /* margin-left: auto; */
+  max-width: 300px; /* Set a max width to prevent overflow */
+  padding-right: 15px; /* Add padding to create space from the edge */
+  width: 17rem;
+}
+
+/* Newsletter form */
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* Ensures full width alignment */
+  width: 100%;
+}
+
+.newsletter-form input[type="email"] {
+  padding: 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%; /* Forces full width */
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+.newsletter-form button {
+  width: 100%; /* Forces button to full width */
+  background-color: #28a745;
+  color: #fff;
+  padding: 12px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.newsletter-form button:hover {
+  background-color: #218838;
+}
+
+.footer-section h3 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #28a745;
+}
+
+.company-address {
+  margin-bottom: 5rem;
+}
+
+.social-media-icons {
+  display: flex;
+  justify-content: center; /* Center align the icons */
+  margin-top: 10px; /* Add some space above */
+}
+
+.social-media-icons a {
+  color: #28a745; /* Change to your preferred color */
+  margin: 0 10px; /* Space between icons */
+  font-size: 24px; /* Icon size */
+  text-decoration: none; /* Remove underline */
+}
+
+.social-media-icons a:hover {
+  color: #218838; /* Darker green on hover */
+}
+
+.footer-section p,
+.footer-section a,
+.footer-section ul,
+.footer-section li {
+  font-size: 0.9rem;
+  margin: 5px 0;
+  line-height: 1.6;
+}
+
+.health-details {
+  color: white;
+}
+
+.footer-section a {
+  color: #ddd;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  color: #28a745;
+  text-decoration: underline;
+}
+
+.footer-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section li {
+  margin-bottom: 8px;
+}
+
+/* Adjustments for site map links under support */
+.site-map-links {
+  padding-top: 10px;
+}
+
+/* Adjustments for news categories under address */
+.news-links {
+  padding-top: 10px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid #444;
+}
+
+.footer-bottom p {
+  font-size: 0.8rem;
+  color: #bbb;
+}
+
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    width: 90%;
+    text-align: center;
+  }
+}

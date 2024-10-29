@@ -1,0 +1,96 @@
+/* Main container for the section */
+.new-section-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  max-width: 1200px; /* Set a max-width for the section */
+  margin: 0 auto; /* Center the section on the page */
+}
+
+/* Content area (text and button) */
+.contents {
+  flex: 1;
+  padding-right: 2rem; /* Add some padding to separate from the animation */
+  max-width: 600px; /* Set a max width for the text block */
+  display: block;
+  justify-content: space-between;
+  padding: 20px;
+  /* max-width: 100%; */
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* Styling for the animation */
+.animation {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Heading styling */
+h2 {
+  font-size: 2.5rem;
+  color: #003366; /* Match color to desired */
+  font-weight: bold;
+  margin-bottom: 1rem; /* Add some space below the heading */
+}
+
+/* Paragraph styling */
+p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* List styles */
+ul {
+  margin-top: 1rem;
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+/* Styling for the "Get Started" button */
+.get-started-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  text-align: center;
+}
+
+.get-started-btn:hover {
+  background-color: #218838; /* Slightly darker green on hover */
+}
+
+/* Ensure the animation scales properly */
+.animation img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* For mobile responsiveness */
+@media (max-width: 768px) {
+  .new-section-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .content,
+  .animation {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
+}
