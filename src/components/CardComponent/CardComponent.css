@@ -97,13 +97,15 @@
   border-radius: 10px;
   text-align: center; /* Center the text */
   height: 100%; /* Ensure it takes the full height */
+  backface-visibility: hidden; /* Add this to ensure the back is hidden when not facing */
 }
 
 .back-text {
-  font-family: "Cursive", sans-serif;
+  font-family: "Poppins", serif;
   font-size: 1.2rem;
   text-align: center;
   line-height: 1.6;
   padding: 10px; /* Add padding for better spacing */
   width: 100%; /* Allow the text to fill the available space */
+  transform: scaleX(-1); /* Flip text horizontally if still mirrored */
 }

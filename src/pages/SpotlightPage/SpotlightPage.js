@@ -1,105 +1,164 @@
 import React from "react";
-import "./SpotlightPage.css"; // Add styling in a CSS file to match the look
+import "./SpotlightPage.css";
+// import "../../components/CustomFooter/CustomFooter.css";
+import HealthCarousel from "./HealthCarousel";
+import Navbar from "../../components/Navbar/Navbar";
+import "../../components/Navbar/Navbar.css";
 
 const SpotlightPage = () => {
   return (
     <div className="spotlight-page">
       {/* Header Section */}
-      <header className="spotlight-header">
-        <h1>Health Surveillance</h1>
-        <h2>Health Monitoring's Work</h2>
-        <p>
+      <Navbar />
+      {/* <header className="spotlight-header"> */}
+      <HealthCarousel />
+      {/* </header> */}
+      <div className="text-center">
+        <h2 className="section-header">HEALTH MONITORING'S WORK</h2>
+        <p className="section-description">
           Our work involves providing solutions to public health, healthcare,
-          and policy makers. This takes many different forms and addresses many
-          topics. We combine the accurate, ongoing transmission of healthcare
-          data to the world’s database with data analytics and actionable
-          information presentation.
+          and policy makers.
+          <br /> This takes many different forms and addresses many topics. We
+          combine the accurate,
+          <br /> ongoing transmission of healthcare data with world-class data
+          analysis and actionable <br /> information presentation.
         </p>
-      </header>
-
+      </div>
       {/* Health Surveillance Section */}
       <section className="health-surveillance">
-        <h2>Health Surveillance</h2>
-        <div className="surveillance-item">
-          <h3>Syndromic Surveillance</h3>
-          <p>
-            Syndromic surveillance is used for the detection, tracking, and
-            weekly reporting of a range of diseases and conditions. It offers
-            early detection of disease outbreaks, seasonal patterns, and
-            geographical variations. The service allows health officials to
-            anticipate problems and manage resources effectively.
-          </p>
-        </div>
-        <div className="surveillance-item">
-          <h3>Opioid Surveillance</h3>
-          <p>
-            In 2019, a record level of opioid-related deaths was noted
-            nationally. This surveillance includes monitoring trends in opioid
-            overdoses, identifying affected areas, and providing data to public
-            health officials to guide resource allocation.
-          </p>
-        </div>
-        <div className="surveillance-item">
-          <h3>Event Surveillance</h3>
-          <p>
-            In 2017, NAS in infants was commented about in media and public
-            health circles. The surveillance focuses on early detection,
-            ensuring timely response by health officials and enhancing public
-            safety. It provides real-time information to aid in intervention
-            efforts.
-          </p>
+        <h2>HEALTH SURVEILLANCE</h2>
+        <div className="grid">
+          <div className="surveillance-item">
+            <img src="/img/adult.jpg" alt="Emergency Department" />
+            <h3>Syndromic Surveillance</h3>
+            <p>
+              Syndromic surveillance is used for the detection, tracking, and
+              weekly reporting of a range of diseases and conditions. It offers
+              early detection of disease outbreaks, seasonal patterns, and
+              geographical variations. The service allows health officials to
+              anticipate problems and manage resources effectively.
+            </p>
+          </div>
+          <div className="surveillance-item">
+            <img src="/img/global.jpg" alt="Opioid Surveillance" />
+            <h3>Opioid Surveillance</h3>
+            <p>
+              In 2019, a record level of opioid-related deaths was noted
+              nationally. This surveillance includes monitoring trends in opioid
+              overdoses, identifying affected areas, and providing data to
+              public health officials to guide resource allocation.
+            </p>
+          </div>
+          <div className="surveillance-item">
+            <img src="/img/patientcare.jpg" alt="Event Surveillance" />
+            <h3>Event Surveillance</h3>
+            <p>
+              In 2017, NAS in infants was commented about in media and public
+              health circles. The surveillance focuses on early detection,
+              ensuring timely response by health officials and enhancing public
+              safety. It provides real-time information to aid in intervention
+              efforts.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* NAS Surveillance Recommendation Section */}
       <section className="nas-surveillance">
-        <h2>Recommendation: NAS Surveillance</h2>
-        <div className="recommendation">
-          <h3>Mandatory Public Health Reporting</h3>
-          <p>
-            Mandatory NAS reporting is essential for tracking health through
-            early identification of affected infants.
-          </p>
-        </div>
-        <div className="recommendation">
-          <h3>Coordinated Assistance from Social Services</h3>
-          <p>
-            A collaborative approach with social services is important to assist
-            affected families in ensuring positive health outcomes.
-          </p>
-        </div>
-        <div className="recommendation">
-          <h3>Clinical Trials for Added Insight</h3>
-          <p>
-            Clinical trials for NAS treatment can provide additional insights,
-            helping in the management and treatment of affected infants.
-          </p>
+        <div className="nas-content-container">
+          {/* Left Column: NAS Surveillance Text */}
+          <div className="nas-text-container">
+            <h2>Recommendation: NAS Surveillance</h2>
+            <p className="nas-text">
+              The ongoing opioid crisis has produced a surge in neonatal
+              abstinence syndrome (NAS). NAS often occurs when a child who was
+              exposed to opioids in utero undergoes withdrawal upon delivery;
+              afflicted newborns exhibit an array of symptoms, including low
+              birth weight, seizures, and difficulties with breathing and
+              feeding. From 2000 to 2012, the incidence of NAS quintupled. In
+              some hospitals, NAS now accounts for 50% of NICU hospital days.
+              Public health officials need up-to-date, comprehensive information
+              to work toward limiting the extent, cost, and severity of NAS. But
+              they often lack even basic metrics; in many states, NAS has not
+              yet been designated a reportable condition. Health Monitoring
+              recommends implementing data-gathering systems in maternity wards
+              to provide relevant, consistent real-time data about the
+              occurrence of substance use disorder among new mothers and NAS
+              among newborns.
+            </p>
+          </div>
+
+          {/* Vertical Line */}
+          <div className="vertical-line"></div>
+
+          {/* Right Column: Recommendations with Icons */}
+          <div className="recommendation-container">
+            <div className="recommendation">
+              <div className="icon">📍</div>
+              <div>
+                <h3>Mandatory Public Health Reporting</h3>
+                <p>
+                  Instances of NAS should be reported through public health
+                  channels, allowing for improved tracking and outcomes for
+                  affected infants.
+                </p>
+              </div>
+            </div>
+
+            <div className="recommendation">
+              <div className="icon">🤝</div>
+              <div>
+                <h3>Coordinated Assistance from Social Services</h3>
+                <p>
+                  Collaborative support for families impacted by NAS is critical
+                  for ensuring access to resources and positive health outcomes.
+                </p>
+              </div>
+            </div>
+
+            <div className="recommendation">
+              <div className="icon">🔬</div>
+              <div>
+                <h3>Clinical Trials for Added Insight</h3>
+                <p>
+                  Additional clinical trials provide insight into effective NAS
+                  treatments and management strategies for newborns.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Population Health Section */}
       <section className="population-health">
-        <h2>Population Health</h2>
-        <div className="health-item">
-          <h3>Influenza</h3>
-          <p>
-            Every year, flu affects millions. This surveillance helps track flu
-            trends, enabling timely response from health officials.
-          </p>
-        </div>
-        <div className="health-item">
-          <h3>Chronic Disease</h3>
-          <p>
-            Chronic diseases are major health concerns, requiring regular
-            monitoring and data analysis.
-          </p>
-        </div>
-        <div className="health-item">
-          <h3>Blood Lead Levels</h3>
-          <p>
-            Lead exposure remains a risk, especially for children. Monitoring
-            ensures prompt response and minimizes risk.
-          </p>
+        <h2>HEALTH SURVEILLANCE</h2>
+        <div className="health-grid">
+          <div className="health-item">
+            <img src="/img/global.jpg" alt="Syndromic Surveillance" />
+            <h3>Syndromic Surveillance</h3>
+            <p>
+              Syndromic surveillance collects real-time data from electronic
+              health records to detect outbreaks and public health events
+              quickly.
+            </p>
+          </div>
+          <div className="health-item">
+            <img src="/img/engineer.jpg" alt="Opioid Surveillance" />
+            <h3>Opioid Surveillance</h3>
+            <p>
+              Health Monitoring tracks opioid use in real-time to address the
+              ongoing crisis and improve public health outcomes.
+            </p>
+          </div>
+          <div className="health-item">
+            <img src="/img/medic.jpg" alt="Event Surveillance" />
+            <h3>Event Surveillance</h3>
+            <p>
+              Event surveillance ensures public safety during large-scale events
+              by monitoring for potential disease outbreaks.
+            </p>
+          </div>
         </div>
       </section>
 
@@ -188,27 +247,7 @@ const SpotlightPage = () => {
       </section>
 
       {/* Footer Section */}
-      <footer className="spotlight-footer">
-        <div className="footer-section">
-          <h4>About Health Monitoring</h4>
-          <p>
-            Our mission is to provide timely, reliable healthcare data. Health
-            Monitoring offers a range of services tailored to public health
-            needs.
-          </p>
-        </div>
-        <div className="footer-section">
-          <h4>Support</h4>
-          <p>Contact us for support at support@healthmonitoring.com.</p>
-        </div>
-        <div className="footer-section">
-          <h4>Contact</h4>
-          <p>
-            Health Monitoring Systems, Pittsburgh, PA 15219. Phone: (123)
-            456-7890.
-          </p>
-        </div>
-      </footer>
+      {/* <CustomFooter /> */}
     </div>
   );
 };

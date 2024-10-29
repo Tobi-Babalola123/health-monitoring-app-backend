@@ -1,25 +1,42 @@
-// src/components/Navbar.js
 import React from "react";
-import "./Navbar.css"; // Create this CSS file for styling
+import { Link } from "react-router-dom"; // If you're using react-router for navigation
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
+import "./Navbar.css";
 
-const Navbar = () => {
+const Navbar = ({ isScrolled }) => {
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
+      <img
+        src="/img/logo12.png"
+        alt="Health Monitoring Logo"
+        style={{ height: "50px" }}
+      />
       <ul className="navbar-links">
         <li>
-          <a href="#about">Home</a>
+          <Link to="/" className="dropbtn">
+            Home
+          </Link>
         </li>
         <li>
-          <a href="#services">Spotlight</a>
+          <Link to="/spotlight" className="dropbtn">
+            Spotlight
+          </Link>
         </li>
         <li>
-          <a href="#contact">Company</a>
+          <Link to="/company" className="dropbtn">
+            Company
+          </Link>
+        </li>
+        <li className="account-icon">
+          <Link to="#" className="nav-icon">
+            <FontAwesomeIcon icon={faUser} />
+          </Link>
         </li>
         <li>
-          <a href="#contact">Blog</a>
+          <button className="btn-doctor">Talk to a Doctor</button>
         </li>
       </ul>
-      <button className="talk-to-doctor">Talk to a Doctor</button>
     </nav>
   );
 };

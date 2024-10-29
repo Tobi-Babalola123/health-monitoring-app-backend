@@ -1,31 +1,117 @@
 /* src/components/Navbar.css */
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Ensures links and button are spaced correctly */
   align-items: center;
   padding: 15px 20px;
-  background-color: #f1f1f1;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  /* overflow-x: hidden; */
+  width: 100%; /* Ensure full width */
+  position: fixed; /* Fix the navbar at the top */
+  top: 0; /* Stick to the top */
+  z-index: 1000; /* Ensure it stays above other content */
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+.navbar.scrolled .btn-doctor {
+  background-color: #28a745; /* Example of button color change */
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent white */
+}
+
+.navbar.scrolled .drop-btn li link {
+  color: #28a745; /* Change this to your desired color */
+}
+
+.navbrand img {
+  height: 50px; /* Adjust the height of the logo */
+}
+
+/* .navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-right: 3rem;
+} */
+
 .navbar-links {
+  margin-left: auto; /* Pushes navbar links to the right */
   list-style: none;
   display: flex;
   gap: 20px; /* Space between links */
+  margin-right: 3rem;
 }
 
 .navbar-links li a {
   text-decoration: none;
-  color: white;
+  color: white; /* Darker color for better contrast */
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar-links li a:hover {
+  color: #28a745; /* Hover effect */
+  border-bottom: 4px solid #28a745;
+  padding-bottom: 8px;
+}
+
+/* Remove padding for account icon link */
+.account-icon a {
+  text-decoration: none; /* Ensure no underline */
+  border-bottom: none; /* Remove any border-bottom */
+  padding-bottom: 0; /* Reset any padding */
+}
+
+.account-icon a:hover {
+  text-decoration: none; /* Prevent underline on hover */
+  border-bottom: none !important; /* Forcefully remove border on hover */
+  padding-bottom: 0; /* Reset padding to prevent shifting */
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* .navbar-links {
+  list-style: none;
+  display: flex;
+  gap: 20px; 
+} */
+
+.navbar-links li a {
+  text-decoration: none;
+  color: white; /* Ensure visibility against the background */
   font-weight: bold;
 }
 
-.talk-to-doctor {
+.btn-doctor {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-doctor:hover {
+  background-color: #187a2f;
+}
+
+/* .talk-to-doctor {
   padding: 10px 15px;
-  background-color: #007bff; /* Button color */
+  background-color: #007bff; 
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-}
+} */
