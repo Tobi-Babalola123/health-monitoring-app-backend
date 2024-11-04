@@ -1,16 +1,17 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+// import { Link } from "react-router-dom";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faUser } from "@fortawesome/free-solid-svg-icons";
 // import ChartComponent from "../ChartComponent/ChartComponent";
 import CardComponent from "../CardComponent/CardComponent";
 import HeartCardComponent from "../HeartCardComponent/HeartCardComponent";
 import ModalComponent from "../ModalComponent/ModalComponent";
 import TestimonialsComponent from "../TestimonialsComponent/TestimonialsComponent";
 import PricingComponent from "../PricingComponent/PricingComponent";
-import { getHealthData } from "../../services/healthDataService";
+// import { getHealthData } from "../../services/healthDataService";
 import axios from "axios";
 import AICardComponent from "../AiCardComponent.js/AICardComponent";
+import Navbar from "../Navbar/Navbar";
 import "./Dashboard.css";
 
 // Add the fetchHealthData function
@@ -72,7 +73,7 @@ const Dashboard = () => {
   ];
   const [showModal, setShowModal] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  const [isScrolled, setIsScrolled] = useState(false);
+  // const [isScrolled, setIsScrolled] = useState(false);
   const [healthData, setHealthData] = useState([]);
   const [aiResponse, setAIResponse] = useState("");
   const cardRefs = useRef([]);
@@ -88,14 +89,14 @@ const Dashboard = () => {
     getHealthData(); // Call the function
   }, []);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     setIsScrolled(window.scrollY > 50);
+  //   };
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -127,9 +128,9 @@ const Dashboard = () => {
     setInputValue(event.target.value);
   };
 
-  const handleAIResponse = (response) => {
-    setAIResponse(response);
-  };
+  // const handleAIResponse = (response) => {
+  //   setAIResponse(response);
+  // };
 
   const handleAskAI = async () => {
     try {
@@ -161,38 +162,7 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       {/* Floating Navbar */}
-      <nav className={`navbar ${isScrolled ? "scrolled" : ""}`}>
-        <img
-          src="/img/logo12.png"
-          alt="Health Monitoring Logo"
-          style={{ height: "50px" }}
-        />
-        <ul className="navlinks">
-          <li className="dropdown">
-            <Link to="/" className="dropbtn">
-              Home
-            </Link>
-          </li>
-          <li className="dropdown">
-            <Link to="/spotlight" className="dropbtn">
-              Spotlight
-            </Link>
-          </li>
-          <li className="dropdown">
-            <Link to="/company" className="dropbtn">
-              Company
-            </Link>
-          </li>
-          <li className="account-icon">
-            <Link to="#" className="nav-icon">
-              <FontAwesomeIcon icon={faUser} />
-            </Link>
-          </li>
-          <li>
-            <button className="btn-doctor">Talk to a Doctor</button>
-          </li>
-        </ul>
-      </nav>
+      <Navbar />
 
       {/* Background Section with Image, Text, and Button */}
       <div className="hero-section">

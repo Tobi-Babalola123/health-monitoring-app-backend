@@ -68,7 +68,7 @@ const SpotlightPage = () => {
         <div className="nas-content-container">
           {/* Left Column: NAS Surveillance Text */}
           <div className="nas-text-container">
-            <h2>Recommendation: NAS Surveillance</h2>
+            <h2>RECOMMENDATION: NAS SURVEILLANCE</h2>
             <p className="nas-text">
               The ongoing opioid crisis has produced a surge in neonatal
               abstinence syndrome (NAS). NAS often occurs when a child who was
@@ -96,11 +96,14 @@ const SpotlightPage = () => {
             <div className="recommendation">
               <div className="icon">📍</div>
               <div>
-                <h3>Mandatory Public Health Reporting</h3>
+                <h3>MANDATORY PUBLIC HEALTH REPORTING</h3>
                 <p>
-                  Instances of NAS should be reported through public health
-                  channels, allowing for improved tracking and outcomes for
-                  affected infants.
+                  Instances of NAS can and should be reported to public health
+                  through existing state and local channels. To get the full
+                  benefit from such channels, state lawmakers must enact
+                  legislation to designate NAS a reportable condition. Adding
+                  children with NAS to states’ birth defects registries may also
+                  facilitate tracking of treatment outcomes.
                 </p>
               </div>
             </div>
@@ -108,10 +111,16 @@ const SpotlightPage = () => {
             <div className="recommendation">
               <div className="icon">🤝</div>
               <div>
-                <h3>Coordinated Assistance from Social Services</h3>
+                <h3>CORDINATED ASSISTANCE FROM SOCIAL SERVICES</h3>
                 <p>
-                  Collaborative support for families impacted by NAS is critical
-                  for ensuring access to resources and positive health outcomes.
+                  Social service supports are extremely important to
+                  NAS-affected infants and their mothers, especially programs
+                  that give women access to early prenatal care. Experts urge
+                  that these supports be made available to all pregnant women
+                  dealing with substance use disorders. Health Monitoring
+                  recommends the establishment of centralized data storage and
+                  management for agencies working to coordinate outreach and
+                  assistance.
                 </p>
               </div>
             </div>
@@ -119,10 +128,13 @@ const SpotlightPage = () => {
             <div className="recommendation">
               <div className="icon">🔬</div>
               <div>
-                <h3>Clinical Trials for Added Insight</h3>
+                <h3>CLINICAL TRIALS FOR ADDED INSIGHT</h3>
                 <p>
-                  Additional clinical trials provide insight into effective NAS
-                  treatments and management strategies for newborns.
+                  NAS treatment programs guided by the latest research findings
+                  are seeing considerable success. Moving forward, randomized
+                  clinical trials are essential to fill the gaps in knowledge
+                  about NAS and improve care by shortening hospital stays,
+                  reducing treatment costs, and improving infant outcomes.
                 </p>
               </div>
             </div>
@@ -132,117 +144,240 @@ const SpotlightPage = () => {
 
       {/* Population Health Section */}
       <section className="population-health">
-        <h2>HEALTH SURVEILLANCE</h2>
+        <h2>POPULATION HEALTH</h2>
         <div className="health-grid">
           <div className="health-item">
             <img src="/img/global.jpg" alt="Syndromic Surveillance" />
-            <h3>Syndromic Surveillance</h3>
+            <h3>Influenza</h3>
             <p>
-              Syndromic surveillance collects real-time data from electronic
-              health records to detect outbreaks and public health events
-              quickly.
+              Every year, millions of people fall ill from the flu. The 1918
+              influenza epidemic is a cautionary tale of how devastating the flu
+              can become if left unchecked. Estimates vary, but some say up to
+              500 million people were infected by the 1918 Spanish flu, causing
+              as many as 50 million deaths. Health Monitoring is working to
+              bring better flu benchmarking to healthcare systems and public
+              health so that the impact on facility operations and public health
+              intervention is better understood.
             </p>
           </div>
           <div className="health-item">
             <img src="/img/engineer.jpg" alt="Opioid Surveillance" />
-            <h3>Opioid Surveillance</h3>
+            <h3>Chronic Disease</h3>
             <p>
-              Health Monitoring tracks opioid use in real-time to address the
-              ongoing crisis and improve public health outcomes.
+              It is estimated that about 85% of healthcare costs are associated
+              with chronic disease. Health Monitoring has done work to better
+              understand the impact on the healthcare system of chronic
+              conditions such as asthma, diabetes, and coronary artery disease.
             </p>
           </div>
           <div className="health-item">
             <img src="/img/medic.jpg" alt="Event Surveillance" />
-            <h3>Event Surveillance</h3>
+            <h3>Blood Lead Levels</h3>
             <p>
-              Event surveillance ensures public safety during large-scale events
-              by monitoring for potential disease outbreaks.
+              Flint, Michigan has become a watchword for tainted water supply.
+              But beyond Flint, more than 5,300 water systems have had a
+              violation of the EPA’s lead and copper rule. Health Monitoring is
+              working with health departments and water suppliers to better
+              detect when the water supply might be causing elevated blood lead
+              levels in children and adults.
             </p>
           </div>
         </div>
       </section>
 
       {/* Antimicrobial Benchmarking Recommendation Section */}
-      <section className="antimicrobial-benchmarking">
-        <h2>Recommendation: Antimicrobial Benchmarking</h2>
-        <div className="comparison">
-          <h3>Per-Facility Comparisons</h3>
-          <p>
-            Comparisons between facilities help identify best practices and
-            areas for improvement.
-          </p>
-        </div>
-        <div className="comparison">
-          <h3>Per-Diagnosis Comparisons</h3>
-          <p>
-            Benchmarking treatments for specific diagnoses aids in standardizing
-            care.
-          </p>
-        </div>
-        <div className="comparison">
-          <h3>Dosage-Based Comparisons</h3>
-          <p>
-            Dosage comparisons help optimize treatments and ensure appropriate
-            care.
-          </p>
-        </div>
-        <div className="comparison">
-          <h3>Health System-Wide Comparisons</h3>
-          <p>
-            System-wide comparisons drive effective change by identifying best
-            practices across the board.
-          </p>
+      <section className="nas-surveillance">
+        <div className="nas-content-container">
+          {/* Left Column: NAS Surveillance Text */}
+          <div className="nas-text-container">
+            <h2>RECOMMENDATION: ANTIMICROBIAL BENCHMARKING</h2>
+            <p className="nas-text">
+              By 2050, the World Health Organization expects
+              antibiotic-resistant disease to be the foremost cause of death
+              worldwide. This harrowing news points to the need to better
+              understand how antibiotics are being used. In fact, health systems
+              are already engaged in antibiotic stewardship programs to ensure
+              proper usage of antibiotics. Health Monitoring recommends that
+              hospitals and health systems share information and compare the
+              work that their stewardship programs are doing. This will allow
+              administrators and clinicians to have a better understanding of
+              current practices and to determine where improvements can be made.
+            </p>
+          </div>
+
+          {/* Vertical Line */}
+          <div className="vertical-line"></div>
+
+          {/* Right Column: Recommendations with Icons */}
+          <div className="recommendation-container">
+            <div className="recommendation">
+              <div className="icon">📍</div>
+              <div>
+                <h3>PEER FACILITY COMPARISONS</h3>
+                <p>
+                  According to the National Institute on Drug Abuse, relapse
+                  rates for addiction resemble those of other chronic diseases
+                  such as diabetes, hypertension, and asthma. Roughly half
+                  (40-60%) of patients are expected to relapse.
+                </p>
+              </div>
+            </div>
+
+            <div className="recommendation">
+              <div className="icon">🤝</div>
+              <div>
+                <h3>PER-DIAGNOSIS COMPARISONS</h3>
+                <p>
+                  Health Monitoring has recommended ongoing monitoring of drug
+                  rehabilitation centers. Anonymized data would be collected
+                  regarding program completion, treatment, and outcomes.
+                </p>
+              </div>
+            </div>
+
+            <div className="recommendation">
+              <div className="icon">🔬</div>
+              <div>
+                <h3>DOSAGE BASED COMPARISONS</h3>
+                <p>
+                  Therapy-day calculations treat one dose and five doses as
+                  equivalent if all doses are administered on the same day. But
+                  dose amounts can matter to the development of antimicrobial
+                  resistance. We can provide feedback on the total quantity of
+                  antimicrobials administered. To be meaningful, such
+                  comparisons will likely need to consider patient age and
+                  possibly patient weight.
+                </p>
+              </div>
+            </div>
+
+            <div className="recommendation">
+              <div className="icon">🔬</div>
+              <div>
+                <h3>HEALTH SYSTEM-AWARE COMPARISONS</h3>
+                <p>
+                  Facilities may wish to compare antimicrobial usage within
+                  their health system. Is there a single hospital that is
+                  consistently an outlier across many usage categories? Do newly
+                  acquired facilities have noticeably different usage patterns?
+                  In addition, facilities may wish to exclude other members of
+                  their health system from comparisons and focus on benchmarking
+                  only with respect to independent facilities.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Public Policy Section */}
-      <section className="public-policy">
-        <h2>Public Policy</h2>
-        <div className="policy-item">
-          <h3>Data Driven Decision Making</h3>
-          <p>
-            Data supports policy-making by offering insights into healthcare
-            trends and outcomes.
-          </p>
-        </div>
-        <div className="policy-item">
-          <h3>Healthcare Utilization</h3>
-          <p>
-            Understanding healthcare utilization is essential to improve access
-            and reduce costs.
-          </p>
-        </div>
-        <div className="policy-item">
-          <h3>Readmissions</h3>
-          <p>
-            Reducing readmissions is a priority, and data analysis helps in
-            achieving this goal.
-          </p>
+      <section className="population-health">
+        <h2>PUBLIC POLICY</h2>
+        <div className="health-grid">
+          <div className="health-item">
+            <img src="/img/global.jpg" alt="Syndromic Surveillance" />
+            <h3>Data-Driven Descision Making</h3>
+            <p>
+              Population health issues pose high-stakes challenges to policy
+              makers. Ineffective measures can compound the harm and the risk to
+              the community. Elected officials and agency staffers need to use
+              current, reliable health data when making plans. Health Monitoring
+              believes they must be able to access and analyze this data in
+              near-real time as a basis for appropriate action.
+            </p>
+          </div>
+          <div className="health-item">
+            <img src="/img/engineer.jpg" alt="Opioid Surveillance" />
+            <h3>Healthcare Utilization</h3>
+            <p>
+              Emergency department visit data reveals a community’s healthcare
+              needs. Details about patients’ chief complaints and their hospital
+              usage patterns can point the way toward more efficient use of
+              facilities and resources. Health Monitoring is implementing new
+              types of analysis to assess how demographics correlate with
+              chronic conditions and thus with healthcare utilization.
+            </p>
+          </div>
+          <div className="health-item">
+            <img src="/img/medic.jpg" alt="Event Surveillance" />
+            <h3>Readmissions</h3>
+            <p>
+              The ACA’s Hospital Readmissions Reduction Program aims to bring
+              Medicare and Medicaid costs down by tying reimbursement to
+              hospital readmission rates. Ideally hospitals could avoid
+              readmission by providing better care at the outset. But other
+              factors also come into play. Refining programs like HRRP calls for
+              detailed, current data. Health Monitoring is working to make such
+              data available to interested policy makers.
+            </p>
+          </div>
         </div>
       </section>
 
       {/* Opioid Rehabilitation Efficacy Recommendation Section */}
-      <section className="opioid-rehabilitation">
-        <h2>Recommendation: Opioid Rehabilitation Efficacy</h2>
-        <div className="recommendation">
-          <h3>Relapse is a Real Concern</h3>
-          <p>
-            Monitoring relapse rates provides critical insights to improve
-            rehabilitation programs.
-          </p>
-        </div>
-        <div className="recommendation">
-          <h3>Information on Programs and Outcomes</h3>
-          <p>
-            Data on program outcomes helps refine rehabilitation strategies.
-          </p>
-        </div>
-        <div className="recommendation">
-          <h3>More Effective Decisions</h3>
-          <p>
-            Data-driven decisions ensure better planning and success in opioid
-            rehabilitation.
-          </p>
+      <section className="nas-surveillance">
+        <div className="nas-content-container">
+          {/* Left Column: NAS Surveillance Text */}
+          <div className="nas-text-container">
+            <h2>RECOMMENDATION: OPIOID REHABILITATION EFFICACY</h2>
+            <p className="nas-text">
+              The opioid overdose crisis has been prominent in the news since
+              before the president declared it a national public health
+              emergency in 2017. Much of the work has centered on tracking fatal
+              and non-fatal overdoses. One important component is missing,
+              however. That is tracking the efficacy of rehabilitation programs.
+              Once addicted to opioids, a person with a substance use disorder
+              has three potential outcomes: they go through rehab successfully,
+              they overdose, or they get off drugs on their own. Health
+              Monitoring recommends tracking the progress of patients through
+              rehab facilities and the various treatments they complete.
+            </p>
+          </div>
+
+          {/* Vertical Line */}
+          <div className="vertical-line"></div>
+
+          {/* Right Column: Recommendations with Icons */}
+          <div className="recommendation-container">
+            <div className="recommendation">
+              <div className="icon">📍</div>
+              <div>
+                <h3>RELAPSE IS A REAL CONCERN</h3>
+                <p>
+                  According to the National Institute on Drug Abuse, relapse
+                  rates for addiction resemble those of other chronic diseases
+                  such as diabetes, hypertension, and asthma. Roughly half
+                  (40-60%) of patients are expected to relapse.
+                </p>
+              </div>
+            </div>
+
+            <div className="recommendation">
+              <div className="icon">🤝</div>
+              <div>
+                <h3>INFORMATION ON PROGRAMS AND OUTCOMES</h3>
+                <p>
+                  Health Monitoring has recommended ongoing monitoring of drug
+                  rehabilitation centers. Anonymized data would be collected
+                  regarding program completion, treatment, and outcomes.
+                </p>
+              </div>
+            </div>
+
+            <div className="recommendation">
+              <div className="icon">🔬</div>
+              <div>
+                <h3>MORE EFFECTIVE DECISIONS</h3>
+                <p>
+                  Currently policymakers and families are making decisions with
+                  little information on how to get effective treatment for those
+                  with substance use disorders. Health Monitoring’s approach
+                  would provide information to better equip people who are
+                  facing expensive, significant decisions.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
