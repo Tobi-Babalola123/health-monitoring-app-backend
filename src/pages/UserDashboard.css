@@ -1,0 +1,138 @@
+/* Main container for the dashboard
+.dashboard-container {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+} */
+
+/* Sidebar styling */
+/* .sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+} */
+
+/* .user-info {
+  text-align: center;
+  margin-bottom: 30px;
+} */
+
+/* .avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+} */
+
+/* .nav-item {
+  display: block;
+  margin: 15px 0;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.nav-item.active {
+  color: #007bff;
+  font-weight: bold;
+} */
+
+/* .main-content {
+  flex: 1;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+} */
+
+/* Header styling */
+/* .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  background-color: #ffffff;
+}
+
+.header .logo img {
+  height: 40px;
+}
+
+.header-buttons button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+} */
+
+/* .header-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.add-data-button,
+.connect-data-button {
+  background-color: #e7f3ff;
+  color: #007bff;
+  border: none;
+} */
+
+/* .add-data-button:hover,
+.connect-data-button:hover {
+  background-color: #d0e6ff;
+} */
+
+/* Dashboard content styling */
+/* .dashboard-cards {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  gap: 20px;
+}
+
+.dashboard-card {
+  width: 300px;
+  background-color: #f5f7fb;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .dashboard-card h3 {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.dashboard-card p {
+  font-size: 12px;
+  color: #666;
+  margin: 5px 0;
+} */
+
+/* .card-icon {
+  font-size: 2em;
+  color: #007bff;
+  margin: 10px 0;
+}
+
+.view-summary {
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.view-summary:hover {
+  text-decoration: underline;
+} */

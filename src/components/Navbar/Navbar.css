@@ -8,6 +8,8 @@
   width: 100%; /* Ensure full width */
   position: fixed; /* Fix the navbar at the top */
   top: 0; /* Stick to the top */
+  left: 0;
+  right: 0;
   z-index: 1000; /* Ensure it stays above other content */
 }
 
@@ -74,6 +76,42 @@ body {
   text-decoration: none; /* Prevent underline on hover */
   border-bottom: none !important; /* Forcefully remove border on hover */
   padding-bottom: 0; /* Reset padding to prevent shifting */
+}
+
+.account-icon {
+  position: relative; /* Needed for positioning the dropdown */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%; /* Position below the icon */
+  left: 0; /* Align with the left edge of the icon */
+  margin-top: 5px; /* Adjust this value as needed */
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: none; /* Initially hidden */
+  flex-direction: column;
+  z-index: 1000; /* Ensure it's on top */
+  opacity: 0; /* Start invisible */
+  transform: translateY(-10px); /* Start slightly above */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition */
+}
+
+/* Show dropdown when active */
+.dropdown-menu.show {
+  display: flex; /* Flex when visible */
+  opacity: 1; /* Fully visible */
+  transform: translateY(0); /* Move to original position */
+}
+
+.dropdown-menu a {
+  padding: 10px 15px; /* Add padding for clickable area */
+  text-decoration: none; /* Remove underline */
+  color: black; /* Change to your desired color */
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0; /* Change background on hover */
 }
 
 .nav-icon {
