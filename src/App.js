@@ -10,7 +10,7 @@ import CustomFooter from "./components/CustomFooter/CustomFooter";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Spotlight from "./pages/SpotlightPage/SpotlightPage";
-import PersonalUserSignup from "./pages/PersonalUserSignup"; // Import the new PersonalUserSignup page
+import PersonalUserSignup from "./pages/PersonalUserSignup";
 import PersonalUserDetails from "./pages/PersonalUserDetails";
 import UserDashboard from "./pages/UserDashboard";
 import { Buffer } from "buffer";
@@ -24,17 +24,19 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Dashboard />} />
         <Route path="/signup" element={<SignUp />} />
-        <Route path="/signup/personal" element={<PersonalUserSignup />} />{" "}
+        <Route path="/signup/personal" element={<PersonalUserSignup />} />
         <Route path="/personaluserdetails" element={<PersonalUserDetails />} />
         <Route path="/userdashboard" element={<UserDashboard />} />
-        {/* New route for PersonalUserSignup */}
         <Route path="/signin" element={<SignIn />} />
         <Route path="/spotlight" element={<Spotlight />} />
       </Routes>
 
       {/* Conditionally render the footer based on the current path */}
       {location.pathname !== "/signup" &&
-        location.pathname !== "/signup/personal" && <CustomFooter />}
+        location.pathname !== "/signup/personal" &&
+        location.pathname !== "/userdashboard" && ( // Exclude footer on UserDashboard
+          <CustomFooter />
+        )}
     </div>
   );
 };

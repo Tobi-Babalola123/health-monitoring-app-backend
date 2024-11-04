@@ -1,6 +1,7 @@
 /* Floating Navbar */
 .dashboard {
   overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto;
 }
 
 .navbar {
@@ -184,9 +185,9 @@
   background-image: url("/public/img/healthbg.jpg");
   background-size: cover;
   background-position: center;
-  height: 80vh; /* Full viewport height */
+  min-height: 80vh; /* Adjusted to allow more content */
   width: 100vw;
-  overflow: hidden; /* Prevents hero section from expanding beyond screen width */
+  overflow: hidden; /* Prevents horizontal overflow */
   display: flex;
   justify-content: center;
   align-items: center;
