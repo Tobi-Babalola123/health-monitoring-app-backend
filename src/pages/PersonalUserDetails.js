@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "./PersonalUserDetails.css";
 
 const PersonalUserDetails = () => {
   const [form, setForm] = useState({
@@ -16,7 +15,6 @@ const PersonalUserDetails = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-
     if (name === "month" || name === "day" || name === "year") {
       setForm((prevForm) => ({
         ...prevForm,
@@ -45,7 +43,7 @@ const PersonalUserDetails = () => {
       return;
     }
     alert("Account created successfully!");
-    navigate("/userdashboard"); // Redirect to dashboard after successful signup
+    navigate("/userdashboard");
   };
 
   const renderYears = () => {
@@ -91,22 +89,31 @@ const PersonalUserDetails = () => {
   const timeZones = [
     "(GMT-12:00) International Date Line West",
     "(GMT-11:00) Midway Island, Samoa",
-    // ...add more time zones here
+    // Add more time zones as needed
   ];
 
   return (
-    <div className="signup-container">
-      <div className="signup-form">
-        <img src="/img/logo.png" alt="Heads Up Logo" className="logo" />
-        <h2>Let's personalize your experience.</h2>
-        <form onSubmit={handleSubmit}>
+    <div className="flex h-screen overflow-hidden">
+      <div className="flex flex-col items-center justify-center w-[97%] max-w-lg p-6 bg-white rounded-lg shadow-lg overflow-y-auto scrollbar-hidden h-full">
+        <img
+          src="/img/logo.png"
+          alt="Heads Up Logo"
+          className="w-32 h-auto mb-4"
+        />
+        <h2 className="text-2xl font-semibold mb-4">
+          Let's personalize your experience.
+        </h2>
+        <form onSubmit={handleSubmit} className="w-full">
           {/* Date of Birth Section */}
-          <label>Date of Birth</label>
-          <div className="dob-selectors">
+          <label className="block mb-2 text-sm font-medium text-gray-700">
+            Date of Birth
+          </label>
+          <div className="flex space-x-2 mb-4">
             <select
               name="month"
               value={form.dateOfBirth.month}
               onChange={handleChange}
+              className="flex-1 border border-gray-300 rounded-lg p-2"
             >
               {months.map((month) => (
                 <option key={month} value={month}>
@@ -118,6 +125,7 @@ const PersonalUserDetails = () => {
               name="day"
               value={form.dateOfBirth.day}
               onChange={handleChange}
+              className="flex-1 border border-gray-300 rounded-lg p-2"
             >
               {renderDays()}
             </select>
@@ -125,24 +133,35 @@ const PersonalUserDetails = () => {
               name="year"
               value={form.dateOfBirth.year}
               onChange={handleChange}
+              className="flex-1 border border-gray-300 rounded-lg p-2"
             >
               {renderYears()}
             </select>
           </div>
 
           {/* Sex at Birth Section */}
-          <label>Sex at Birth</label>
-          <div className="sex-selectors">
+          <label className="block mb-2 text-sm font-medium text-gray-700">
+            Sex at Birth
+          </label>
+          <div className="flex space-x-4 mb-4">
             <button
               type="button"
-              className={form.sex === "Male" ? "selected" : ""}
+              className={`flex-1 px-4 py-2 border rounded-lg ${
+                form.sex === "Male"
+                  ? "bg-blue-500 text-white"
+                  : "bg-white text-gray-700"
+              }`}
               onClick={() => setForm({ ...form, sex: "Male" })}
             >
               Male
             </button>
             <button
               type="button"
-              className={form.sex === "Female" ? "selected" : ""}
+              className={`flex-1 px-4 py-2 border rounded-lg ${
+                form.sex === "Female"
+                  ? "bg-blue-500 text-white"
+                  : "bg-white text-gray-700"
+              }`}
               onClick={() => setForm({ ...form, sex: "Female" })}
             >
               Female
@@ -150,18 +169,28 @@ const PersonalUserDetails = () => {
           </div>
 
           {/* Display Units Section */}
-          <label>Display Units</label>
-          <div className="unit-selectors">
+          <label className="block mb-2 text-sm font-medium text-gray-700">
+            Display Units
+          </label>
+          <div className="flex space-x-4 mb-4">
             <button
               type="button"
-              className={form.units === "Imperial" ? "selected" : ""}
+              className={`flex-1 px-4 py-2 border rounded-lg ${
+                form.units === "Imperial"
+                  ? "bg-blue-500 text-white"
+                  : "bg-white text-gray-700"
+              }`}
               onClick={() => setForm({ ...form, units: "Imperial" })}
             >
               Imperial
             </button>
             <button
               type="button"
-              className={form.units === "Metric" ? "selected" : ""}
+              className={`flex-1 px-4 py-2 border rounded-lg ${
+                form.units === "Metric"
+                  ? "bg-blue-500 text-white"
+                  : "bg-white text-gray-700"
+              }`}
               onClick={() => setForm({ ...form, units: "Metric" })}
             >
               Metric
@@ -169,14 +198,17 @@ const PersonalUserDetails = () => {
           </div>
 
           {/* Height Section */}
-          <label>Height</label>
-          <div className="height-inputs">
+          <label className="block mb-2 text-sm font-medium text-gray-700">
+            Height
+          </label>
+          <div className="flex space-x-2 mb-4">
             <input
               type="number"
               name="feet"
               placeholder="feet"
               value={form.height.feet}
               onChange={handleChange}
+              className="flex-1 border border-gray-300 rounded-lg p-2"
             />
             <input
               type="number"
@@ -184,16 +216,19 @@ const PersonalUserDetails = () => {
               placeholder="inches"
               value={form.height.inches}
               onChange={handleChange}
+              className="flex-1 border border-gray-300 rounded-lg p-2"
             />
           </div>
 
           {/* Time Zone Section */}
-          <label>Time Zone</label>
+          <label className="block mb-2 text-sm font-medium text-gray-700">
+            Time Zone
+          </label>
           <select
             name="timeZone"
             value={form.timeZone}
             onChange={handleChange}
-            className="timezone-select"
+            className="w-full border border-gray-300 rounded-lg p-2 mb-4"
           >
             {timeZones.map((zone, index) => (
               <option key={index} value={zone}>
@@ -203,26 +238,30 @@ const PersonalUserDetails = () => {
           </select>
 
           {/* reCAPTCHA */}
-          <div className="recaptcha-checkbox">
+          <div className="flex items-center mb-4">
             <input
               type="checkbox"
               name="recaptcha"
               checked={form.recaptcha}
               onChange={handleChange}
+              className="mr-2"
             />
-            <label>I'm not a robot</label>
+            <label className="text-sm">I'm not a robot</label>
           </div>
 
           {/* Buttons */}
-          <div className="button-group">
+          <div className="flex space-x-2 justify-center">
             <button
               type="button"
-              className="back-button"
+              className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg"
               onClick={() => navigate("/signup")}
             >
               Back
             </button>
-            <button type="submit" className="create-account-button">
+            <button
+              type="submit"
+              className="px-4 py-2 bg-blue-500 text-white rounded-lg"
+            >
               Sign Up
             </button>
           </div>
@@ -230,8 +269,12 @@ const PersonalUserDetails = () => {
       </div>
 
       {/* Background Image Section */}
-      <div className="signup-background">
-        <img src="/img/helth.jpg" alt="Health monitoring" />
+      <div className="hidden md:flex md:w-[85%] h-full">
+        <img
+          src="/img/helth.jpg"
+          alt="Health monitoring"
+          className="object-cover w-full h-full"
+        />
       </div>
     </div>
   );

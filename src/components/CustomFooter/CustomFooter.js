@@ -9,19 +9,21 @@ const CustomFooter = () => {
         <div className="footer-section about">
           <h3>About Health Monitoring</h3>
           <p className="health-details">
-            Our mission: Provide services that focus healthcare resources on
-            existing and emergent threats to community health.
+            <span>Our mission:</span> Provide services that focus healthcare
+            resources on existing and emergent threats to community health.
           </p>
           <p className="health-details">
-            Our customers: State and local public health departments and health
-            systems. We currently serve Connecticut, New Jersey, Pennsylvania,
-            Ohio, Wyoming, and several counties in California, covering a total
-            of more than 40 million people.
+            <span>Our Clients:</span> We serve individuals, healthcare
+            providers, and organizations, empowering them with data-driven
+            insights to track and improve health outcomes. Currently, we cover
+            multiple regions, impacting millions of lives with personalized
+            health monitoring solutions
           </p>
           <p className="health-details">
-            What we do: Monitor real-time health-related data for community
-            health indicators. We collect data from nearly 600 hospitals and
-            3,600 ambulatory systems.
+            <span>What We Do:</span> We track real-time health data to monitor
+            key health indicators. Our platform collects information from
+            numerous healthcare facilities, providing valuable insights for
+            better health management.
           </p>
         </div>
 
@@ -30,13 +32,13 @@ const CustomFooter = () => {
           <h3>Support</h3>
           <p className="health-details">
             Support email:{" "}
-            <a href="mailto:support@health-monitoring.com">
-              support@health-monitoring.com
+            <a href="mailto:support@health-monitorings.com">
+              support@health-monitorings.com
             </a>
           </p>
-          <p className="health-details">Emergency support: 1 (844) 231-5776</p>
+          <p className="health-details">Emergency support: 1 (814) 230-5071</p>
           <p className="health-details">
-            Additional guidance: <a href="#">EpiCenter User Manual</a>
+            Additional guidance: <a href="#">User Manual</a>
           </p>
           <h3>Site Maps</h3>
           <ul className="site-map-links">
@@ -44,16 +46,16 @@ const CustomFooter = () => {
               <a href="#">Home</a>
             </li>
             <li>
-              <a href="#">Spotlight</a>
+              <a href="#">Features</a>
             </li>
             <li>
-              <a href="#">Company</a>
+              <a href="#">Help Center</a>
+            </li>
+            <li>
+              <a href="#">About Us</a>
             </li>
             <li>
               <a href="#">Blog</a>
-            </li>
-            <li>
-              <a href="#">EpiCenter</a>
             </li>
           </ul>
         </div>
@@ -61,33 +63,33 @@ const CustomFooter = () => {
         {/* Address Section */}
         <div className="footer-section address">
           <h3>Address</h3>
-          <p className="health-details">700 River Ave., Suite 130</p>
-          <p className="company-address health-details">Pittsburgh, PA 15212</p>
-          <h3>News Categories</h3>
+          <p className="health-details">123 Wellness St., Suite 130</p>
+          <p className="company-address health-details">City, State, ZIP</p>
+          <h3>Health Insights & Updates</h3>
           <ul className="news-links">
             <li>
-              <a href="#">News Categories</a>
+              <a href="#">Health News</a>
             </li>
             <li>
-              <a href="#">Bulletins</a>
+              <a href="#">Health Data Reports</a>
             </li>
             <li>
-              <a href="#">Health-Related Data Analysis</a>
+              <a href="#">Wellness Tips</a>
             </li>
             <li>
-              <a href="#">Jobs</a>
+              <a href="#">Latest Updates</a>
             </li>
             <li>
-              <a href="#">News</a>
+              <a href="#">Job Opportunities</a>
             </li>
             <li>
-              <a href="#">Other</a>
+              <a href="#">Resources</a>
             </li>
             <li>
-              <a href="#">Publications</a>
+              <a href="#">Research Publications</a>
             </li>
             <li>
-              <a href="#">Syndromic Surveillance</a>
+              <a href="#">Health Trends</a>
             </li>
           </ul>
         </div>
@@ -95,13 +97,13 @@ const CustomFooter = () => {
         {/* Contact Section */}
         <div className="footer-section contact">
           <h3>Contact</h3>
-          <p className="health-details">Corporate office: 1 (412) 231-2020</p>
-          <p className="health-details">General calls: 1 (844) 231-5774</p>
-          <p className="health-details">Emergency support: 1 (844) 231-5776</p>
+          <p className="health-details">Corporate office: 1 (400) 201-2000</p>
+          <p className="health-details">General calls: 1 (800) 000-0000</p>
+          <p className="health-details">Emergency support: 1 (811) 111-0000</p>
           <p className="health-details">
             Inquiries:{" "}
-            <a href="mailto:inquiries@health-monitoring.com">
-              inquiries@health-monitoring.com
+            <a href="mailto:inquiries@health-monitorings.com">
+              inquiries@health-monitorings.com
             </a>
           </p>
 

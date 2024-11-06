@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react"; // <-- Ensure useRef is imported
+
 import {
   BrowserRouter as Router,
   Route,
@@ -18,11 +19,12 @@ window.Buffer = Buffer;
 
 const App = () => {
   const location = useLocation();
+  const footerRef = useRef(null); // Create ref for the footer
 
   return (
     <div className="app">
       <Routes>
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Dashboard footerRef={footerRef} />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/signup/personal" element={<PersonalUserSignup />} />
         <Route path="/personaluserdetails" element={<PersonalUserDetails />} />
@@ -34,8 +36,9 @@ const App = () => {
       {/* Conditionally render the footer based on the current path */}
       {location.pathname !== "/signup" &&
         location.pathname !== "/signup/personal" &&
+        location.pathname !== "/personaluserdetails" && // Exclude footer on PersonalUserDetails
         location.pathname !== "/userdashboard" && ( // Exclude footer on UserDashboard
-          <CustomFooter />
+          <CustomFooter ref={footerRef} />
         )}
     </div>
   );

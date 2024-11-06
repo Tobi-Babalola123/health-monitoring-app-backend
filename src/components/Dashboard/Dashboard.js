@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faUser } from "@fortawesome/free-solid-svg-icons";
 // import ChartComponent from "../ChartComponent/ChartComponent";
@@ -28,7 +28,14 @@ const fetchHealthData = async () => {
   }
 };
 
-const Dashboard = () => {
+const Dashboard = ({ footerRef }) => {
+  const handleContactClick = () => {
+    if (footerRef.current) {
+      // Scroll to the footer
+      footerRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }; // <-- Add this closing brace
+
   const cards = [
     {
       image: "/img/team.jpg",
@@ -124,6 +131,7 @@ const Dashboard = () => {
       observer.disconnect();
     };
   }, [cards.length]);
+
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
@@ -159,43 +167,80 @@ const Dashboard = () => {
   };
 
   const closeModal = () => setShowModal(false);
+
   return (
     <div className="dashboard">
       {/* Floating Navbar */}
       <Navbar />
 
       {/* Background Section with Image, Text, and Button */}
-      <div className="hero-section">
-        <div className="overlay">
-          <div className="row icons-section text-center">
-            <div className="col-md-4">
-              <div className="icon-circle">
-                <img src="/img/trials.png" alt="Population Health" />
+      <div className="relative hero-section bg-cover bg-center h-[400px] flex items-center">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+        <div className="relative z-10 text-center">
+          <div className="flex justify-center space-x-10">
+            {" "}
+            {/* Adjusted space between cards */}
+            <div className="flex flex-col items-center">
+              <div
+                className="icon-circle mb-2 w-16 h-16 rounded-full shadow-lg shadow-gray-300/50"
+                style={{ marginLeft: "-10px" }}
+              >
+                {" "}
+                {/* Shifted left with negative margin */}
+                <img
+                  src="/img/heart-rate-monitor.png"
+                  alt="Population Health"
+                  className="w-16 h-16 mx-auto"
+                />
               </div>
-              <h3>Population Health</h3>
-              <p>
-                Insight about regional and demographic
-                <br /> variations in health conditions
+              <h3 className="text-xl font-bold text-white">
+                Personalized Health Tracking
+              </h3>
+              <p className="text-center text-gray-200 text-sm">
+                Personalized insights to track your health
+                <br /> journey and key wellness milestones.
               </p>
             </div>
-            <div className="col-md-4">
-              <div className="icon-circle">
-                <img src="/img/auction.png" alt="Public Policy" />
+            <div className="flex flex-col items-center">
+              <div
+                className="icon-circle mb-2 w-16 h-16 rounded-full shadow-lg shadow-gray-300/50"
+                style={{ marginLeft: "-10px" }}
+              >
+                {" "}
+                {/* Shifted left with negative margin */}
+                <img
+                  src="/img/tracking.png"
+                  alt="Public Policy"
+                  className="w-16 h-16 mx-auto"
+                />
               </div>
-              <h3>Public Policy</h3>
-              <p>
-                Better data and sharper analysis for
-                <br /> intelligent planning and decision making
+              <h3 className="text-xl font-bold text-white">
+                Real-Time Monitoring
+              </h3>
+              <p className="text-center text-gray-200 text-sm">
+                Stay on top of your health with real-time data, from
+                <br /> heart rate to sleep quality, for a better well-being.
               </p>
             </div>
-            <div className="col-md-4">
-              <div className="icon-circle">
-                <img src="/img/cctv.png" alt="Health Surveillance" />
+            <div className="flex flex-col items-center">
+              <div
+                className="icon-circle mb-2 w-16 h-16 rounded-full shadow-lg shadow-gray-300/50"
+                style={{ marginLeft: "-10px" }}
+              >
+                {" "}
+                {/* Shifted left with negative margin */}
+                <img
+                  src="/img/medical-history.png"
+                  alt="Health Surveillance"
+                  className="w-16 h-16 mx-auto"
+                />
               </div>
-              <h3>Health Surveillance</h3>
-              <p>
-                Real-time monitoring of changes in health conditions
-                <br /> within the state, country, or zip code
+              <h3 className="text-xl font-bold text-white">
+                Insightful Health Reports
+              </h3>
+              <p className="text-center text-gray-200 text-sm">
+                Receive detailed health reports with insights into your habits,
+                <br /> empowering you to make data-driven health decisions
               </p>
             </div>
           </div>
@@ -203,73 +248,107 @@ const Dashboard = () => {
       </div>
 
       {/* Why We Stand Out Section */}
-      <div
-        className="why-we-stand-out-section"
-        style={{ backgroundColor: "white" }}
-      >
+      <div className="why-we-stand-out-section bg-white py-12">
         <div className="text-center">
-          <h2 className="section-header">WHY WE STAND OUT</h2>
-          <p className="section-description">
-            Health Monitoring provides software services that collect and
-            analyze healthcare data to <br /> illuminate complex, large-scale
-            health issues. The growing cost and complexity of <br /> healthcare
-            demand greater insight into regional and national health issues.
+          <h2 className="text-3xl font-semibold">WHY WE STAND OUT</h2>
+          <p className="mt-4 text-lg">
+            Our health monitoring app leverages advanced technology to track and
+            analyze
+            <br /> your personal health data, providing insights into your
+            well-being. As <br />
+            healthcare complexities rise, our app empowers users to understand
+            their health journey <br />
+            better and make informed decisions for a healthier life
           </p>
         </div>
 
-        <div className="row services-row">
-          <div className="col-md-4 service-item">
-            <div className="service-icon-text">
-              <div className="service-icon">
+        <div className="flex items-center justify-center py-4">
+          <span className="line"></span> {/* Left line */}
+          <img
+            src="/img/earth22.png" // Replace with your world icon source
+            alt="World Icon"
+            className="w-6 h-6 mx-2" // Adjust size as needed
+          />
+          <span className="line"></span> {/* Right line */}
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 mt-12">
+          <div className="service-item mr-10">
+            <div className="flex items-start">
+              <div className="service-icon ml-16">
+                {" "}
+                {/* Added margin-left of 4rem */}
                 <img
-                  src="/img/cloud-computing.png"
+                  src="/img/assistance.png"
                   alt="Software as a Service"
+                  className="w-12 h-12"
                 />
               </div>
-              <div className="service-text">
-                <h3 className="service-header">SOFTWARE AS A SERVICE</h3>
-                <p className="service-description">
-                  Delivering our software as a service means ongoing
-                  improvements and fast implementation. Every updated version
-                  features our combination of healthcare knowledge, statistical
-                  precision, and state-of-the-art technology.
+              <div className="ml-2">
+                {" "}
+                {/* Adjusted margin-left for text container */}
+                <h3 className="text-xl font-bold">
+                  HEALTH MONITORING AS A SERVICE
+                </h3>
+                <p className="text-sm">
+                  Our health monitoring app provides continuous updates,
+                  blending advanced technology, health insights, and precise
+                  data analysis to empower you with the latest tools for
+                  effective wellness tracking.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="col-md-4 service-item">
-            <div className="service-icon-text">
-              <div className="service-icon">
+          <div className="service-item mr-10">
+            <div className="flex items-start">
+              <div className="service-icon ml-16">
+                {" "}
+                {/* Added margin-left of 4rem */}
                 <img
-                  src="/img/heartbeat.png"
+                  src="/img/heet.png"
                   alt="Healthcare Facility Network"
+                  className="w-12 h-12"
                 />
               </div>
-              <div className="service-text">
-                <h3 className="service-header">HEALTHCARE FACILITY NETWORK</h3>
-                <p className="service-description">
-                  We have one of the largest healthcare data networks in the
-                  U.S. That matters because collecting data from so many sources
-                  makes it faster and cheaper for you to analyze, investigate,
-                  and take action.
+              <div className="ml-2">
+                {" "}
+                {/* Adjusted margin-left for text container */}
+                <h3 className="text-xl font-bold">
+                  EXPANSIVE HEALTHCARE NETWORK
+                </h3>
+                <p className="text-sm">
+                  Our extensive healthcare data network offers comprehensive
+                  insights, drawing from diverse sources to empower faster,
+                  cost-effective analysis and actionable insights for your
+                  health journey
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="col-md-4 service-item">
-            <div className="service-icon-text">
-              <div className="service-icon">
-                <img src="/img/monitor.png" alt="Big Data" />
+          <div className="service-item mr-10">
+            <div className="flex items-start">
+              <div className="service-icon ml-16">
+                {" "}
+                {/* Added margin-left of 4rem */}
+                <img
+                  src="/img/medical.png"
+                  alt="Big Data"
+                  className="w-12 h-12"
+                />
               </div>
-              <div className="service-text">
-                <h3 className="service-header">BIG DATA</h3>
-                <p className="service-description">
-                  In operation since 2008, the EpiCenter system now collects and
-                  processes more than 2 GB of data each day. Health Monitoring
-                  has the experience and expertise to help you do big things
-                  with your big data.
+              <div className="ml-2">
+                {" "}
+                {/* Adjusted margin-left for text container */}
+                <h3 className="text-xl font-bold">
+                  BIG DATA FOR BETTER HEALTH
+                </h3>
+                <p className="text-sm">
+                  With robust data processing capabilities, our app collects and
+                  analyzes extensive health data daily, equipping you with
+                  powerful insights. Leverage our experience to make impactful
+                  decisions that enhance your health journey
                 </p>
               </div>
             </div>
@@ -277,14 +356,14 @@ const Dashboard = () => {
         </div>
       </div>
 
-      <div className="content">
-        <div className="left-section">
+      <div className="content flex flex-col md:flex-row">
+        <div className="left-section w-full md:w-1/2">
           <HeartCardComponent
             image={`${process.env.PUBLIC_URL}/img/heart3dd.png`}
           />
         </div>
 
-        <div className="right-section ai-card">
+        <div className="right-section ai-card w-full md:w-1/2">
           <AICardComponent
             inputValue={inputValue}
             onInputChange={handleInputChange}
@@ -295,7 +374,7 @@ const Dashboard = () => {
       </div>
 
       {/* Cards Section */}
-      <div className="cards-section specific-section">
+      <div className="cards-section specific-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
         {cards.map((card, index) => (
           <CardComponent
             key={index}
@@ -307,6 +386,9 @@ const Dashboard = () => {
             image={`${process.env.PUBLIC_URL}${card.image}`}
             backText={card.backText}
             visible={visibleCards[index]} // Pass visibility state
+            onButtonClick={
+              card.heading === "SUPPORT" ? handleContactClick : null
+            } // Trigger the scroll to footer
           />
         ))}
       </div>
@@ -314,9 +396,9 @@ const Dashboard = () => {
       {/* Modal Component for Health Status */}
       {showModal && (
         <ModalComponent onClose={closeModal}>
-          <h2>Health Status for {inputValue}</h2>
+          <h2 className="text-2xl font-bold">Health Status for {inputValue}</h2>
           {healthData.length > 0 ? (
-            <ul>
+            <ul className="mt-4 list-disc pl-5">
               {healthData.map((data, index) => (
                 <li key={index}>{data}</li>
               ))}

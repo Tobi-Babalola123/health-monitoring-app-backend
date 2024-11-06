@@ -14,50 +14,50 @@ const SpotlightPage = () => {
       <HealthCarousel />
       {/* </header> */}
       <div className="text-center">
-        <h2 className="section-header">HEALTH MONITORING'S WORK</h2>
+        <h2 className="section-header">HEALTH MONITORING’S IMPACT</h2>
         <p className="section-description">
-          Our work involves providing solutions to public health, healthcare,
-          and policy makers.
-          <br /> This takes many different forms and addresses many topics. We
-          combine the accurate,
-          <br /> ongoing transmission of healthcare data with world-class data
-          analysis and actionable <br /> information presentation.
+          We offer tailored solutions for individuals, healthcare providers, and
+          organizations
+          <br /> to monitor and improve health outcomes. Our approach combines
+          <br /> real-time health data tracking with advanced analysis,
+          delivering
+          <br /> actionable insights to support better health decisions.
         </p>
       </div>
       {/* Health Surveillance Section */}
       <section className="health-surveillance">
-        <h2>HEALTH SURVEILLANCE</h2>
+        <h2>INSIGHTFUL HEALTH REPORTS</h2>
         <div className="grid">
           <div className="surveillance-item">
-            <img src="/img/adult.jpg" alt="Emergency Department" />
-            <h3>Syndromic Surveillance</h3>
+            <img src="/img/surv.jpg" alt="Emergency Department" />
+            <h3>Health Monitoring</h3>
             <p>
-              Syndromic surveillance is used for the detection, tracking, and
-              weekly reporting of a range of diseases and conditions. It offers
-              early detection of disease outbreaks, seasonal patterns, and
-              geographical variations. The service allows health officials to
-              anticipate problems and manage resources effectively.
+              Our health monitoring system continuously tracks key health
+              indicators, providing real-time surveillance to detect potential
+              issues early. This proactive approach ensures timely interventions
+              and supports overall well-being.
             </p>
           </div>
           <div className="surveillance-item">
-            <img src="/img/global.jpg" alt="Opioid Surveillance" />
-            <h3>Opioid Surveillance</h3>
+            <img src="/img/opioid.jpg" alt="Opioid Surveillance" />
+            <h3>Opioid Monitoring</h3>
             <p>
-              In 2019, a record level of opioid-related deaths was noted
-              nationally. This surveillance includes monitoring trends in opioid
-              overdoses, identifying affected areas, and providing data to
-              public health officials to guide resource allocation.
+              In 2019, the U.S. saw a significant rise in opioid-related deaths.
+              Our app tracks opioid overdose trends, identifies high-risk areas,
+              and delivers real-time data to health officials, helping them
+              allocate resources effectively for better public health outcomes.
             </p>
           </div>
           <div className="surveillance-item">
             <img src="/img/patientcare.jpg" alt="Event Surveillance" />
             <h3>Event Surveillance</h3>
             <p>
-              In 2017, NAS in infants was commented about in media and public
-              health circles. The surveillance focuses on early detection,
-              ensuring timely response by health officials and enhancing public
-              safety. It provides real-time information to aid in intervention
-              efforts.
+              In 2017, the rise of neonatal abstinence syndrome (NAS) in infants
+              gained significant attention. Our app's surveillance feature
+              focuses on the early detection of health events, enabling timely
+              interventions by health professionals. By providing real-time
+              data, it supports rapid response efforts, enhancing public health
+              safety and ensuring the well-being of communities.
             </p>
           </div>
         </div>
@@ -70,21 +70,19 @@ const SpotlightPage = () => {
           <div className="nas-text-container">
             <h2>RECOMMENDATION: NAS SURVEILLANCE</h2>
             <p className="nas-text">
-              The ongoing opioid crisis has produced a surge in neonatal
-              abstinence syndrome (NAS). NAS often occurs when a child who was
-              exposed to opioids in utero undergoes withdrawal upon delivery;
-              afflicted newborns exhibit an array of symptoms, including low
-              birth weight, seizures, and difficulties with breathing and
-              feeding. From 2000 to 2012, the incidence of NAS quintupled. In
-              some hospitals, NAS now accounts for 50% of NICU hospital days.
-              Public health officials need up-to-date, comprehensive information
-              to work toward limiting the extent, cost, and severity of NAS. But
-              they often lack even basic metrics; in many states, NAS has not
-              yet been designated a reportable condition. Health Monitoring
-              recommends implementing data-gathering systems in maternity wards
-              to provide relevant, consistent real-time data about the
-              occurrence of substance use disorder among new mothers and NAS
-              among newborns.
+              The opioid crisis has led to a significant increase in Neonatal
+              Abstinence Syndrome (NAS), a condition where newborns exposed to
+              opioids in utero experience withdrawal symptoms. These symptoms
+              can include low birth weight, seizures, and breathing or feeding
+              difficulties. From 2000 to 2012, NAS cases increased fivefold, and
+              in some hospitals, NAS now accounts for half of NICU hospital
+              stays. Public health officials need real-time, accurate data to
+              address the growing issue and mitigate its impact. However, many
+              states still lack essential metrics, as NAS is not always a
+              reportable condition. Our health monitoring app recommends
+              implementing real-time data collection in maternity wards to track
+              NAS and substance use disorder among new mothers, providing the
+              information needed to reduce its prevalence and improve outcomes.
             </p>
           </div>
 
@@ -94,47 +92,67 @@ const SpotlightPage = () => {
           {/* Right Column: Recommendations with Icons */}
           <div className="recommendation-container">
             <div className="recommendation">
-              <div className="icon">📍</div>
+              <div className="icon">
+                <img
+                  src="/img/medical-report.png"
+                  alt="Location Icon"
+                  className="icon-image"
+                />
+              </div>
               <div>
                 <h3>MANDATORY PUBLIC HEALTH REPORTING</h3>
                 <p>
-                  Instances of NAS can and should be reported to public health
-                  through existing state and local channels. To get the full
-                  benefit from such channels, state lawmakers must enact
-                  legislation to designate NAS a reportable condition. Adding
-                  children with NAS to states’ birth defects registries may also
-                  facilitate tracking of treatment outcomes.
+                  Neonatal Abstinence Syndrome (NAS) should be reported to
+                  public health authorities through existing state and local
+                  channels. To maximize the effectiveness of these channels,
+                  state lawmakers must pass legislation to designate NAS as a
+                  reportable condition. Additionally, including NAS cases in
+                  birth defects registries can help track treatment outcomes and
+                  improve long-term care strategies.
                 </p>
               </div>
             </div>
 
             <div className="recommendation">
-              <div className="icon">🤝</div>
+              <div className="icon">
+                <img
+                  src="/img/pub.png"
+                  alt="Location Icon"
+                  className="icon-image"
+                />
+              </div>
               <div>
-                <h3>CORDINATED ASSISTANCE FROM SOCIAL SERVICES</h3>
+                <h3>CORDINATED SUPPORT FOR NAS-AFFECTED FAMILIES</h3>
                 <p>
-                  Social service supports are extremely important to
-                  NAS-affected infants and their mothers, especially programs
-                  that give women access to early prenatal care. Experts urge
-                  that these supports be made available to all pregnant women
-                  dealing with substance use disorders. Health Monitoring
-                  recommends the establishment of centralized data storage and
-                  management for agencies working to coordinate outreach and
-                  assistance.
+                  Effective support from social services is vital for infants
+                  affected by Neonatal Abstinence Syndrome (NAS) and their
+                  mothers, especially through programs that provide access to
+                  early prenatal care. Ensuring that all expectant mothers
+                  facing substance use challenges have access to these resources
+                  is essential. Our health monitoring platform advocates for a
+                  centralized data system to streamline communication and
+                  coordination among agencies, enhancing outreach and support
+                  efforts.
                 </p>
               </div>
             </div>
 
             <div className="recommendation">
-              <div className="icon">🔬</div>
+              <div className="icon">
+                <img
+                  src="/img/insight.png"
+                  alt="Location Icon"
+                  className="icon-image"
+                />
+              </div>
               <div>
-                <h3>CLINICAL TRIALS FOR ADDED INSIGHT</h3>
+                <h3>INFORMED HEALTH INSIGHTS</h3>
                 <p>
-                  NAS treatment programs guided by the latest research findings
-                  are seeing considerable success. Moving forward, randomized
-                  clinical trials are essential to fill the gaps in knowledge
-                  about NAS and improve care by shortening hospital stays,
-                  reducing treatment costs, and improving infant outcomes.
+                  With continuous updates and research-backed data, our platform
+                  helps you stay informed about the latest health trends and
+                  conditions. Whether you’re managing a health condition or
+                  focusing on wellness, we provide valuable insights to help you
+                  make informed decisions for better health outcomes.
                 </p>
               </div>
             </div>
@@ -144,42 +162,49 @@ const SpotlightPage = () => {
 
       {/* Population Health Section */}
       <section className="population-health">
-        <h2>POPULATION HEALTH</h2>
+        <h2>PERSONALIZED HEALTH TRACKING</h2>
         <div className="health-grid">
           <div className="health-item">
-            <img src="/img/global.jpg" alt="Syndromic Surveillance" />
+            <img src="/img/flu.jpg" alt="Syndromic Surveillance" />
             <h3>Influenza</h3>
             <p>
-              Every year, millions of people fall ill from the flu. The 1918
-              influenza epidemic is a cautionary tale of how devastating the flu
-              can become if left unchecked. Estimates vary, but some say up to
-              500 million people were infected by the 1918 Spanish flu, causing
-              as many as 50 million deaths. Health Monitoring is working to
-              bring better flu benchmarking to healthcare systems and public
-              health so that the impact on facility operations and public health
-              intervention is better understood.
+              Influenza remains a major health challenge, with millions affected
+              annually. Historically, epidemics like the 1918 Spanish flu
+              highlight the devastating potential of unchecked outbreaks. Our
+              health monitoring app focuses on improving flu surveillance by
+              providing real-time tracking and analysis, helping healthcare
+              systems and public health authorities better understand the impact
+              on facilities and interventions. With this data, we aim to support
+              timely decision-making and optimize responses to mitigate the
+              flu's spread and impact.
             </p>
           </div>
           <div className="health-item">
-            <img src="/img/engineer.jpg" alt="Opioid Surveillance" />
+            <img src="/img/chronic.jpg" alt="Opioid Surveillance" />
             <h3>Chronic Disease</h3>
             <p>
-              It is estimated that about 85% of healthcare costs are associated
-              with chronic disease. Health Monitoring has done work to better
-              understand the impact on the healthcare system of chronic
-              conditions such as asthma, diabetes, and coronary artery disease.
+              Chronic diseases, such as asthma, diabetes, and coronary artery
+              disease, account for a significant portion of healthcare costs.
+              Our health monitoring app tracks key metrics to help healthcare
+              systems better understand the long-term impacts of these
+              conditions. By providing real-time data and insights, we aim to
+              improve patient outcomes, optimize care, and reduce the financial
+              burden of chronic diseases on the healthcare system
             </p>
           </div>
           <div className="health-item">
-            <img src="/img/medic.jpg" alt="Event Surveillance" />
+            <img src="/img/bloodd.jpg" alt="Event Surveillance" />
             <h3>Blood Lead Levels</h3>
             <p>
-              Flint, Michigan has become a watchword for tainted water supply.
-              But beyond Flint, more than 5,300 water systems have had a
-              violation of the EPA’s lead and copper rule. Health Monitoring is
-              working with health departments and water suppliers to better
-              detect when the water supply might be causing elevated blood lead
-              levels in children and adults.
+              Elevated blood lead levels, often due to contaminated water
+              supplies, remain a significant public health concern. Beyond
+              high-profile cases like Flint, many water systems have violated
+              the EPA's lead and copper regulations. Our health monitoring app
+              aids health departments and water suppliers by providing real-time
+              data to detect when water may be contributing to increased lead
+              exposure. By tracking these levels, we help mitigate the risks to
+              children and adults, ensuring quicker responses and informed
+              public health decisions.
             </p>
           </div>
         </div>
@@ -190,18 +215,17 @@ const SpotlightPage = () => {
         <div className="nas-content-container">
           {/* Left Column: NAS Surveillance Text */}
           <div className="nas-text-container">
-            <h2>RECOMMENDATION: ANTIMICROBIAL BENCHMARKING</h2>
+            <h2>RECOMMENDATION: ANTIBIOTIC STEWARDSHIP MONITORING</h2>
             <p className="nas-text">
-              By 2050, the World Health Organization expects
-              antibiotic-resistant disease to be the foremost cause of death
-              worldwide. This harrowing news points to the need to better
-              understand how antibiotics are being used. In fact, health systems
-              are already engaged in antibiotic stewardship programs to ensure
-              proper usage of antibiotics. Health Monitoring recommends that
-              hospitals and health systems share information and compare the
-              work that their stewardship programs are doing. This will allow
-              administrators and clinicians to have a better understanding of
-              current practices and to determine where improvements can be made.
+              With antibiotic resistance projected to be the leading cause of
+              death by 2050, effective antibiotic stewardship is critical.
+              Health Monitoring recommends using real-time data to track and
+              benchmark antibiotic usage across hospitals and healthcare
+              systems. By sharing insights from stewardship programs, healthcare
+              providers can assess current practices, identify areas for
+              improvement, and optimize antibiotic use to combat resistance,
+              ultimately improving patient outcomes and reducing the spread of
+              resistant infections.
             </p>
           </div>
 
@@ -211,58 +235,91 @@ const SpotlightPage = () => {
           {/* Right Column: Recommendations with Icons */}
           <div className="recommendation-container">
             <div className="recommendation">
-              <div className="icon">📍</div>
+              <div className="icon">
+                <img
+                  src="/img/canar.png"
+                  alt="Location Icon"
+                  className="icon-image"
+                />
+              </div>
               <div>
                 <h3>PEER FACILITY COMPARISONS</h3>
                 <p>
-                  According to the National Institute on Drug Abuse, relapse
-                  rates for addiction resemble those of other chronic diseases
-                  such as diabetes, hypertension, and asthma. Roughly half
-                  (40-60%) of patients are expected to relapse.
+                  Relapse rates for addiction mirror those of chronic conditions
+                  like diabetes and hypertension, with 40-60% of patients
+                  expected to experience relapse. Health Monitoring suggests
+                  utilizing real-time data to compare facility performance in
+                  addiction treatment. By benchmarking recovery outcomes across
+                  similar healthcare facilities, administrators can identify
+                  successful strategies, improve treatment approaches, and
+                  optimize care plans to support long-term recovery and reduce
+                  relapse rates effectively.
                 </p>
               </div>
             </div>
 
             <div className="recommendation">
-              <div className="icon">🤝</div>
+              <div className="icon">
+                <img
+                  src="/img/prohibition.png"
+                  alt="Location Icon"
+                  className="icon-image"
+                />
+              </div>
               <div>
                 <h3>PER-DIAGNOSIS COMPARISONS</h3>
                 <p>
-                  Health Monitoring has recommended ongoing monitoring of drug
-                  rehabilitation centers. Anonymized data would be collected
-                  regarding program completion, treatment, and outcomes.
+                  Health Monitoring proposes continuous tracking of drug
+                  rehabilitation centers, gathering anonymized data on treatment
+                  completion rates, program efficacy, and patient outcomes. This
+                  approach allows for insights into performance across centers,
+                  helping to refine treatment methods and improve success rates.
                 </p>
               </div>
             </div>
 
             <div className="recommendation">
-              <div className="icon">🔬</div>
+              <div className="icon">
+                <img
+                  src="/img/dropper.png"
+                  alt="Location Icon"
+                  className="icon-image"
+                />
+              </div>
               <div>
                 <h3>DOSAGE BASED COMPARISONS</h3>
                 <p>
-                  Therapy-day calculations treat one dose and five doses as
-                  equivalent if all doses are administered on the same day. But
-                  dose amounts can matter to the development of antimicrobial
-                  resistance. We can provide feedback on the total quantity of
-                  antimicrobials administered. To be meaningful, such
-                  comparisons will likely need to consider patient age and
-                  possibly patient weight.
+                  Health Monitoring facilitates precise dosage tracking by
+                  calculating therapy days while accounting for total
+                  antimicrobial quantity administered per patient. This feature
+                  considers dose variations, highlighting the impact of dosage
+                  on antimicrobial resistance. For accurate insights, dosage
+                  comparisons can be tailored to patient age and weight,
+                  enabling providers to optimize treatment plans and support
+                  resistance prevention efforts.
                 </p>
               </div>
             </div>
 
             <div className="recommendation">
-              <div className="icon">🔬</div>
+              <div className="icon">
+                <img
+                  src="/img/world.png"
+                  alt="Location Icon"
+                  className="icon-image"
+                />
+              </div>
               <div>
                 <h3>HEALTH SYSTEM-AWARE COMPARISONS</h3>
                 <p>
-                  Facilities may wish to compare antimicrobial usage within
-                  their health system. Is there a single hospital that is
-                  consistently an outlier across many usage categories? Do newly
-                  acquired facilities have noticeably different usage patterns?
-                  In addition, facilities may wish to exclude other members of
-                  their health system from comparisons and focus on benchmarking
-                  only with respect to independent facilities.
+                  Our app enables facilities to benchmark antimicrobial usage
+                  across their health system, allowing administrators to
+                  identify trends, spot outliers, and understand how newly
+                  acquired facilities compare. By providing flexible comparison
+                  options, facilities can choose to focus on system-wide
+                  insights or benchmark against independent facilities,
+                  empowering data-driven improvements and alignment with best
+                  practices.
                 </p>
               </div>
             </div>
@@ -272,43 +329,46 @@ const SpotlightPage = () => {
 
       {/* Public Policy Section */}
       <section className="population-health">
-        <h2>PUBLIC POLICY</h2>
+        <h2>REAL-TIME MONITORING</h2>
         <div className="health-grid">
           <div className="health-item">
-            <img src="/img/global.jpg" alt="Syndromic Surveillance" />
+            <img src="/img/data.jpg" alt="Syndromic Surveillance" />
             <h3>Data-Driven Descision Making</h3>
             <p>
-              Population health issues pose high-stakes challenges to policy
-              makers. Ineffective measures can compound the harm and the risk to
-              the community. Elected officials and agency staffers need to use
-              current, reliable health data when making plans. Health Monitoring
-              believes they must be able to access and analyze this data in
-              near-real time as a basis for appropriate action.
+              Our Health Monitoring app empowers policymakers and healthcare
+              administrators with near-real-time data to tackle pressing
+              population health challenges. By providing immediate, accurate
+              health insights, the app supports informed, data-driven
+              decision-making. This timely access enables leaders to respond
+              effectively, implement proactive measures, and reduce risks to
+              community health.
             </p>
           </div>
           <div className="health-item">
-            <img src="/img/engineer.jpg" alt="Opioid Surveillance" />
+            <img src="/img/ilera.jpg" alt="Opioid Surveillance" />
             <h3>Healthcare Utilization</h3>
             <p>
-              Emergency department visit data reveals a community’s healthcare
-              needs. Details about patients’ chief complaints and their hospital
-              usage patterns can point the way toward more efficient use of
-              facilities and resources. Health Monitoring is implementing new
-              types of analysis to assess how demographics correlate with
-              chronic conditions and thus with healthcare utilization.
+              Emergency department data provides valuable insights into a
+              community's healthcare needs, highlighting patterns in patient
+              complaints and hospital usage. Health Monitoring enhances this
+              analysis by examining how demographics correlate with chronic
+              conditions, enabling better understanding of healthcare
+              utilization. This approach helps optimize facility resource
+              allocation and improve care efficiency across the community.
             </p>
           </div>
           <div className="health-item">
-            <img src="/img/medic.jpg" alt="Event Surveillance" />
+            <img src="/img/read.jpg" alt="Event Surveillance" />
             <h3>Readmissions</h3>
             <p>
-              The ACA’s Hospital Readmissions Reduction Program aims to bring
-              Medicare and Medicaid costs down by tying reimbursement to
-              hospital readmission rates. Ideally hospitals could avoid
-              readmission by providing better care at the outset. But other
-              factors also come into play. Refining programs like HRRP calls for
-              detailed, current data. Health Monitoring is working to make such
-              data available to interested policy makers.
+              Tracking hospital readmission rates is essential for improving
+              patient outcomes and reducing healthcare costs. Health Monitoring
+              helps identify patterns in patient care that may lead to
+              readmissions, providing healthcare providers with real-time data
+              to enhance treatment plans and prevent unnecessary hospital
+              visits. By offering actionable insights, the app supports more
+              efficient care delivery and better long-term patient health
+              management.
             </p>
           </div>
         </div>
@@ -321,16 +381,26 @@ const SpotlightPage = () => {
           <div className="nas-text-container">
             <h2>RECOMMENDATION: OPIOID REHABILITATION EFFICACY</h2>
             <p className="nas-text">
-              The opioid overdose crisis has been prominent in the news since
-              before the president declared it a national public health
-              emergency in 2017. Much of the work has centered on tracking fatal
-              and non-fatal overdoses. One important component is missing,
-              however. That is tracking the efficacy of rehabilitation programs.
-              Once addicted to opioids, a person with a substance use disorder
-              has three potential outcomes: they go through rehab successfully,
-              they overdose, or they get off drugs on their own. Health
-              Monitoring recommends tracking the progress of patients through
-              rehab facilities and the various treatments they complete.
+              The opioid epidemic has been a significant public health crisis,
+              and while efforts have focused on tracking overdose rates, there
+              is a critical gap in monitoring the success of opioid
+              rehabilitation programs. Health Monitoring aims to bridge this gap
+              by providing a comprehensive approach to tracking the progress of
+              individuals in rehab, from initial treatment to recovery. By
+              collecting real-time data on treatment milestones, success rates,
+              and patient outcomes, the app allows healthcare providers to
+              evaluate the effectiveness of rehabilitation interventions and
+              adjust care plans accordingly. This data-driven approach not only
+              tracks recovery but also identifies which treatment strategies are
+              most effective, offering insights into patient progress, relapse
+              risks, and long-term recovery trends. By continuously monitoring
+              key indicators such as completion of therapy, withdrawal symptoms,
+              and post-rehabilitation support, the app ensures that patients
+              receive personalized care tailored to their specific needs. With
+              real-time access to this data, healthcare professionals can make
+              informed decisions to enhance treatment plans, improve patient
+              outcomes, and ultimately contribute to reducing opioid dependency
+              and overdose rates in the community.
             </p>
           </div>
 
@@ -340,7 +410,13 @@ const SpotlightPage = () => {
           {/* Right Column: Recommendations with Icons */}
           <div className="recommendation-container">
             <div className="recommendation">
-              <div className="icon">📍</div>
+              <div className="icon">
+                <img
+                  src="/img/hadiit.png"
+                  alt="Location Icon"
+                  className="icon-image"
+                />
+              </div>
               <div>
                 <h3>RELAPSE IS A REAL CONCERN</h3>
                 <p>
@@ -353,27 +429,50 @@ const SpotlightPage = () => {
             </div>
 
             <div className="recommendation">
-              <div className="icon">🤝</div>
+              <div className="icon">
+                <img
+                  src="/img/health-report.png"
+                  alt="Location Icon"
+                  className="icon-image"
+                />
+              </div>
               <div>
                 <h3>INFORMATION ON PROGRAMS AND OUTCOMES</h3>
                 <p>
-                  Health Monitoring has recommended ongoing monitoring of drug
-                  rehabilitation centers. Anonymized data would be collected
-                  regarding program completion, treatment, and outcomes.
+                  Health Monitoring advocates for continuous tracking of drug
+                  rehabilitation centers to better understand program
+                  effectiveness. By collecting anonymized data on key factors
+                  such as treatment completion rates, patient progress, and
+                  overall outcomes, the app provides valuable insights into the
+                  success of various rehabilitation programs. This real-time
+                  data enables healthcare providers and policymakers to assess
+                  the impact of treatment strategies, identify areas for
+                  improvement, and optimize care to support long-term recovery.
                 </p>
               </div>
             </div>
 
             <div className="recommendation">
-              <div className="icon">🔬</div>
+              <div className="icon">
+                <img
+                  src="/img/decision-making.png"
+                  alt="Location Icon"
+                  className="icon-image"
+                />
+              </div>
               <div>
                 <h3>MORE EFFECTIVE DECISIONS</h3>
                 <p>
-                  Currently policymakers and families are making decisions with
-                  little information on how to get effective treatment for those
-                  with substance use disorders. Health Monitoring’s approach
-                  would provide information to better equip people who are
-                  facing expensive, significant decisions.
+                  Policymakers and families often face challenging decisions
+                  regarding treatment options for individuals with substance use
+                  disorders, yet they lack comprehensive data to guide their
+                  choices. Health Monitoring addresses this gap by providing
+                  actionable insights and real-time data to support more
+                  informed, effective decision-making. This approach equips both
+                  decision-makers and families with the information needed to
+                  navigate treatment options, ensuring that individuals receive
+                  the most appropriate and cost-effective care for long-term
+                  recovery.
                 </p>
               </div>
             </div>

@@ -2,7 +2,19 @@ import React, { useState } from "react";
 import "./CardComponent.css"; // Ensure you have appropriate styling
 
 const CardComponent = React.forwardRef(
-  ({ heading, icon, text, buttonText, image, backText, visible }, ref) => {
+  (
+    {
+      heading,
+      icon,
+      text,
+      buttonText,
+      image,
+      backText,
+      visible,
+      onButtonClick,
+    },
+    ref
+  ) => {
     const [isFlipped, setIsFlipped] = useState(false);
 
     const handleFlip = () => {
@@ -11,7 +23,9 @@ const CardComponent = React.forwardRef(
 
     const handleButtonClick = (event) => {
       event.stopPropagation(); // Prevent the card flip when clicking the button
-      // Add your button click logic here, e.g., alert or navigate
+      if (onButtonClick) {
+        onButtonClick(event); // Call the passed onButtonClick function
+      }
     };
 
     return (

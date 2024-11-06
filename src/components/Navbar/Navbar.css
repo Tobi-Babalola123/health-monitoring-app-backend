@@ -21,7 +21,7 @@ body {
 }
 
 .navbar.scrolled .btn-doctor {
-  background-color: #28a745; /* Example of button color change */
+  background-color: #134b70; /* Example of button color change */
 }
 
 .navbar.scrolled {
@@ -29,7 +29,7 @@ body {
 }
 
 .navbar.scrolled .drop-btn li link {
-  color: #28a745; /* Change this to your desired color */
+  color: #134b70; /* Change this to your desired color */
 }
 
 .navbrand img {
@@ -60,8 +60,8 @@ body {
 }
 
 .navbar-links li a:hover {
-  color: #28a745; /* Hover effect */
-  border-bottom: 4px solid #28a745;
+  color: #134b70; /* Hover effect */
+  border-bottom: 4px solid #134b70;
   padding-bottom: 8px;
 }
 
@@ -87,7 +87,7 @@ body {
   top: 100%; /* Position below the icon */
   left: 0; /* Align with the left edge of the icon */
   margin-top: 5px; /* Adjust this value as needed */
-  background-color: white;
+  /* background-color: white; */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: none; /* Initially hidden */
   flex-direction: column;
@@ -132,17 +132,18 @@ body {
 }
 
 .btn-doctor {
-  background-color: #28a745;
-  color: white;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  padding: 8px 16px; /* Adjust padding */
+  font-size: 14px; /* Smaller font size */
+  background-color: #4a628a; /* Button background color */
+  color: #fff; /* Text color */
+  border: none; /* No border */
+  border-radius: 4px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background-color 0.3s ease; /* Smooth transition */
 }
 
 .btn-doctor:hover {
-  background-color: #187a2f;
+  background-color: #7ab2d3; /* Darker on hover */
 }
 
 /* .talk-to-doctor {

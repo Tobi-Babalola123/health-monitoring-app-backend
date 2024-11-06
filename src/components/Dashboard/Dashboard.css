@@ -19,7 +19,7 @@
 
 /* Scroll-based color change */
 .navbar.scrolled .btn-doctor {
-  background-color: #28a745; /* Example of button color change */
+  background-color: #134b70; /* Example of button color change */
 }
 
 .navbar.scrolled {
@@ -27,7 +27,7 @@
 }
 
 .navbar.scrolled .navlinks li a {
-  color: #28a745; /* Change this to your desired color */
+  color: #134b70; /* Change this to your desired color */
 }
 
 .navbrand img {
@@ -50,8 +50,8 @@
 }
 
 .navlinks li a:hover {
-  color: #28a745; /* Hover effect */
-  border-bottom: 4px solid #28a745;
+  color: #134b70; /* Hover effect */
+  border-bottom: 4px solid #134b70;
   padding-bottom: 8px;
 }
 
@@ -74,8 +74,8 @@
 }
 
 .btn-doctor {
-  background-color: #28a745;
-  color: white;
+  background-color: #007b9c;
+  color: #fff;
   border: none;
   padding: 8px 15px;
   border-radius: 5px;
@@ -84,7 +84,7 @@
 }
 
 .btn-doctor:hover {
-  background-color: #187a2f;
+  background-color: #508c9b;
 }
 
 .content {
@@ -100,7 +100,7 @@
 
 .right-section {
   flex: 1;
-  background-color: pink; /* Set a pink background for the AI card */
+  background-color: #7ab2d3; /* Set a pink background for the AI card */
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -158,7 +158,7 @@
 .dropdown-content {
   display: none; /* Hidden by default */
   position: absolute;
-  background-color: white;
+  /* background-color: #6a9ab0 !important; */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds depth to dropdown */
   z-index: 1;
   width: 200px;
@@ -182,7 +182,7 @@
 
 /* Hero Section */
 .hero-section {
-  background-image: url("/public/img/healthbg.jpg");
+  background-image: url("/public/img/bg1.jpg");
   background-size: cover;
   background-position: center;
   min-height: 80vh; /* Adjusted to allow more content */
@@ -267,7 +267,7 @@
 }
 
 .start-monitoring-btn {
-  background-color: #f56a6a;
+  background-color: #134b70;
   border: none;
   padding: 10px 25px;
   color: white;
@@ -284,7 +284,7 @@
 }
 
 .icon-circle {
-  background-color: #fff;
+  background-color: transparent;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -297,7 +297,7 @@
 }
 
 .icon-circle:hover {
-  background-color: #6a9c89; /* Change to your desired hover color */
+  background-color: #7ab2d3; /* Change to your desired hover color */
   transform: scale(1.05); /* Optional: add a scaling effect on hover */
 }
 
@@ -345,7 +345,7 @@
 /* Button in Hero Section */
 .hero-btn {
   padding: 10px 20px;
-  background-color: #ff5722;
+  background-color: #134b70;
   color: white;
   border: none;
   border-radius: 5px;
@@ -355,7 +355,27 @@
 }
 
 .hero-btn:hover {
-  background-color: #e64a19;
+  background-color: #508c9b;
+}
+
+.line {
+  display: inline-block;
+  flex-grow: 1; /* Allow line to grow */
+  max-width: 3rem;
+  /* width: 5px !important; */
+  height: 1px; /* Line thickness */
+  background-color: #ccc; /* Line color */
+  margin: 0 10px; /* Space around the line */
+  align-self: center; /* Center align the line */
+}
+
+.service-icon img {
+  /* Adjust if necessary */
+}
+
+.py-4 {
+  padding-top: 2rem; /* 16px */
+  padding-bottom: 2rem; /* 16px */
 }
 
 /* Main Content Section */
@@ -446,7 +466,7 @@
 }
 
 .health-btn:hover {
-  background-color: #1d682e;
+  background-color: #134b70;
 }
 
 .heart-card {
@@ -462,10 +482,12 @@
   gap: 20px; /* Add spacing between items */
   padding: 20px; /* Optional: add padding around the section */
   margin-right: 39px;
+  /* width: 300px; */
 }
 
 .card-component {
   transition: transform 0.5s ease; /* Optional: add a transition effect on the card */
+  /* width: 300px; */
 }
 
 .card-component.flipped {
