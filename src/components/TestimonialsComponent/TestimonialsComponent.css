@@ -61,7 +61,7 @@ ul li {
   display: inline-block;
   margin-top: 1rem;
   padding: 0.75rem 1.5rem;
-  background-color: #28a745;
+  background-color: #134b70;
   color: white;
   border: none;
   border-radius: 0.5rem;
@@ -71,7 +71,7 @@ ul li {
 }
 
 .get-started-btn:hover {
-  background-color: #218838; /* Slightly darker green on hover */
+  background-color: #508c9b;
 }
 
 /* Ensure the animation scales properly */

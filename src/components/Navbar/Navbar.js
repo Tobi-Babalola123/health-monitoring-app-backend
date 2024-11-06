@@ -73,7 +73,9 @@ const Navbar = ({ isScrolled }) => {
           )}
         </li>
         <li>
-          <button className="btn-doctor">Talk to a Doctor</button>
+          <Link to="/signup">
+            <button className="btn-doctor">Get Started</button>
+          </Link>
         </li>
       </ul>
     </nav>

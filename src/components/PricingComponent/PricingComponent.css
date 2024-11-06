@@ -36,7 +36,7 @@ h2 {
 
 .pricing-price {
   font-size: 2rem;
-  color: #28a745;
+  color: #134b70;
   margin: 20px 0;
 }
 
@@ -53,7 +53,7 @@ h2 {
 }
 
 .pricing-button {
-  background-color: #28a745;
+  background-color: #134b70;
   color: white;
   padding: 10px 20px;
   border: none;
@@ -64,7 +64,7 @@ h2 {
 }
 
 .pricing-button:hover {
-  background-color: #218838;
+  background-color: #508c9b;
 }
 
 @media (max-width: 768px) {

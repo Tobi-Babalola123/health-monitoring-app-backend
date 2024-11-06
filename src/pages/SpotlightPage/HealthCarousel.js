@@ -15,16 +15,16 @@ const HealthCarousel = () => {
         showArrows={true}
       >
         <div className="carousel-slide">
-          <img src="/img/engineer.jpg" alt="Health Image 1" />
-          <p className="carousel-caption">HEALTH SURVEILLANCE</p>
+          <img src="/img/womi.jpg" alt="" />
+          <p className="carousel-caption">PERSONALIZED HEALTH TRACKING</p>
         </div>
         <div className="carousel-slide">
-          <img src="/img/global.jpg" alt="Health Image 2" />
-          <p className="carousel-caption">PUBLIC POLICY</p>
+          <img src="/img/real2.jpg" alt="" />
+          <p className="carousel-caption">REAL-TIME MONITORING</p>
         </div>
         <div className="carousel-slide">
-          <img src="/img/medic.jpg" alt="Health Image 3" />
-          <p className="carousel-caption">POPULATION HEALTH</p>
+          <img src="/img/wom3.jpg" alt="" />
+          <p className="carousel-caption">INSIGHTFUL HEALTH REPORTS</p>
         </div>
       </Carousel>
     </div>
