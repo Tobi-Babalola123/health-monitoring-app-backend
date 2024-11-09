@@ -1,34 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Page</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
-            margin: 0;
-            padding: 20px;
-        }
-        h1 {
-            color: #333;
-        }
-        p {
-            font-size: 16px;
-            color: #666;
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome to the Test Page!</h1>
-    <p>This is a simple HTML page created for testing purposes.</p>
-    <button onclick="showMessage()">Click Me!</button>
+<html>
+  <head>
+    <title>Ask AI</title>
+  </head>
+  <body>
+    <h1>Ask AI a question</h1>
+    <form method="post">
+      {% csrf_token %}
+      <label for="query">Enter your query:</label><br>
+      <input type="text" id="query" name="query"><br><br>
+      <input type="submit" value="Get Answer">
+    </form>
 
-    <script>
-        function showMessage() {
-            alert("Hello! This is a test message.");
-        }
-    </script>
-</body>
+    {% if response %}
+    <h2>AI's Response:</h2>
+    <p>{{ response }}</p>
+    {% endif %}
+  </body>
 </html>
