@@ -1,0 +1,536 @@
+/* Floating Navbar */
+.dashboard {
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto;
+}
+
+.navbar {
+  background-color: transparent; /* Transparent navbar */
+  position: fixed; /* Sticks navbar to top */
+  top: 0;
+  width: 100%;
+  z-index: 1000; /* Keeps navbar above other elements */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Adds a slight shadow for depth */
+}
+
+/* Scroll-based color change */
+.navbar.scrolled .btn-doctor {
+  background-color: #134b70; /* Example of button color change */
+}
+
+.navbar.scrolled {
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent white */
+}
+
+.navbar.scrolled .navlinks li a {
+  color: #134b70; /* Change this to your desired color */
+}
+
+.navbrand img {
+  height: 50px; /* Adjust the height of the logo */
+}
+
+.navlinks {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin-right: 3rem;
+}
+
+.navlinks li a {
+  text-decoration: none;
+  color: white; /* Darker color for better contrast */
+  font-weight: bold;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navlinks li a:hover {
+  color: #134b70; /* Hover effect */
+  border-bottom: 4px solid #134b70;
+  padding-bottom: 8px;
+}
+
+/* Remove padding for account icon link */
+.account-icon a {
+  text-decoration: none; /* Ensure no underline */
+  border-bottom: none; /* Remove any border-bottom */
+  padding-bottom: 0; /* Reset any padding */
+}
+
+.account-icon a:hover {
+  text-decoration: none; /* Prevent underline on hover */
+  border-bottom: none !important; /* Forcefully remove border on hover */
+  padding-bottom: 0; /* Reset padding to prevent shifting */
+}
+
+.nav-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.btn-doctor {
+  background-color: #007b9c;
+  color: #fff;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-doctor:hover {
+  background-color: #508c9b;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.left-section {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.right-section {
+  flex: 1;
+  background-color: #7ab2d3; /* Set a pink background for the AI card */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ai-card {
+  animation: fadeIn 1s ease-in-out; /* Optional animation for the AI card */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ai-button-section {
+  text-align: center; /* Center align the button */
+  margin: 20px 0; /* Add some spacing */
+}
+
+.ai-functionality-btn {
+  background-color: #007bff; /* Button color */
+  color: white; /* Text color */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.ai-functionality-btn:hover {
+  background-color: #0056b3; /* Darker shade on hover */
+}
+
+.flippable-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.flippable-card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none; /* Hidden by default */
+  position: absolute;
+  /* background-color: #6a9ab0 !important; */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Adds depth to dropdown */
+  z-index: 1;
+  width: 200px;
+  padding: 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block; /* Shows dropdown on hover */
+}
+
+.dropdown-content a {
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  color: rgb(15, 52, 52);
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1; /* Light grey hover effect */
+}
+
+/* Hero Section */
+.hero-section {
+  background-image: url("/public/img/bg1.jpg");
+  background-size: cover;
+  background-position: center;
+  min-height: 80vh; /* Adjusted to allow more content */
+  width: 100vw;
+  overflow: hidden; /* Prevents horizontal overflow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+/* General Section Styling */
+.why-we-stand-out-section {
+  padding: 20px 0;
+  text-align: center;
+}
+
+.section-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007b9c; /* Adjust this color as needed */
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 50px;
+  line-height: 1.6;
+}
+
+/* Service Section Styling */
+.services-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 0 2rem; /* Adjust padding to prevent overflow */
+  margin-top: 40px;
+}
+
+.service-item {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.service-icon {
+  width: 60px;
+  height: 60px;
+  flex-shrink: 0;
+  margin-right: 20px;
+  margin-bottom: 10rem;
+}
+
+.service-header {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  color: #007b9c;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.6;
+}
+
+.service-icon-text {
+  display: flex;
+  align-items: center;
+}
+
+.service-text {
+  max-width: 250px;
+  text-align: left;
+}
+
+.service-icon img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: contain;
+}
+
+.start-monitoring-btn {
+  background-color: #134b70;
+  border: none;
+  padding: 10px 25px;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+/* Icons Section */
+.icons-section {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  gap: 4rem;
+}
+
+.icon-circle {
+  background-color: transparent;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 4rem;
+  /* transition: background-color 0.3s ease; */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for both scaling and background color */
+}
+
+.icon-circle:hover {
+  background-color: #7ab2d3; /* Change to your desired hover color */
+  transform: scale(1.05); /* Optional: add a scaling effect on hover */
+}
+
+.icon-circle img {
+  width: 50px;
+  height: 50px;
+}
+
+.icons-section p {
+  font-size: 0.8rem;
+  color: #ccc;
+}
+
+.round-card {
+  background-color: white; /* Default background color */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transitions */
+}
+
+.round-card:hover {
+  background-color: black; /* Background color on hover */
+  color: white; /* Text color change */
+  transform: scale(1.05); /* Scaling effect */
+}
+
+/* Overlay for Hero Section */
+.overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 50px;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Button in Hero Section */
+.hero-btn {
+  padding: 10px 20px;
+  background-color: #134b70;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-btn:hover {
+  background-color: #508c9b;
+}
+
+.line {
+  display: inline-block;
+  flex-grow: 1; /* Allow line to grow */
+  max-width: 3rem;
+  /* width: 5px !important; */
+  height: 1px; /* Line thickness */
+  background-color: #ccc; /* Line color */
+  margin: 0 10px; /* Space around the line */
+  align-self: center; /* Center align the line */
+}
+
+.service-icon img {
+  /* Adjust if necessary */
+}
+
+.py-4 {
+  padding-top: 2rem; /* 16px */
+  padding-bottom: 2rem; /* 16px */
+}
+
+/* Main Content Section */
+.content {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  max-width: 100%; /* Prevent horizontal overflow */
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.left-section {
+  flex-basis: 45%; /* Adjust this percentage to change width */
+  margin-right: 20px;
+  max-width: 100%;
+  flex: 1;
+  padding: 20px;
+}
+
+.right-section {
+  flex-basis: 55%; /* Adjust this percentage to change width */
+  max-width: 100%;
+  flex: 2;
+  padding: 20px;
+}
+
+.chart-container {
+  /* display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 20px;
+  max-width: 100%;
+  overflow: hidden; */
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start; /* Align chart to the top */
+  gap: 20px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.input-container {
+  /* display: flex;
+  flex-direction: column;
+  gap: 10px; 
+  margin-top: 15px;  */
+
+  display: flex; /* Align items in a row */
+  gap: 10px; /* Space between input and button */
+  margin-top: 15px; /* Space above the input */
+  flex-wrap: wrap;
+}
+
+.health-input {
+  /* padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  width: 59%; */
+
+  padding: 10px; /* Padding for input */
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Increase font size */
+  width: calc(45% - 10px);
+}
+
+.health-btn {
+  /* padding: 10px; 
+  background-color: #28a745; 
+  color: white; 
+  border: none; 
+  border-radius: 5px;
+  cursor: pointer; 
+  font-size: 16px; 
+  width: 59%; */
+
+  padding: 10px; /* Padding for the button */
+  background-color: #28a745; /* Button color */
+  color: white; /* Text color */
+  border: none; /* No border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  font-size: 16px; /* Increase font size */
+  width: calc(45% - 10px);
+}
+
+.health-btn:hover {
+  background-color: #134b70;
+}
+
+.heart-card {
+  margin-bottom: 20px; /* Ensure there's space below the card */
+}
+
+.cards-section {
+  display: flex; /* Use flexbox for layout */
+  flex-direction: row; /* Align items horizontally */
+  justify-content: center; /* Center-align the cards */
+  align-items: center; /* Align items vertically to the center */
+  margin: 0 auto; /* Center the section */
+  gap: 20px; /* Add spacing between items */
+  padding: 20px; /* Optional: add padding around the section */
+  margin-right: 39px;
+  /* width: 300px; */
+}
+
+.card-component {
+  transition: transform 0.5s ease; /* Optional: add a transition effect on the card */
+  /* width: 300px; */
+}
+
+.card-component.flipped {
+  transform: rotateY(180deg); /* Optional: flip animation */
+}
+
+.flippable-card {
+  margin: 20px; /* Add margin between cards */
+}
+
+.testimonials-section {
+  margin-top: 20px; /* Add some space above the testimonials */
+  display: flex; /* Optional: use flexbox if needed for layout */
+  justify-content: center; /* Center testimonials if you want */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .left-section,
+  .right-section {
+    flex-basis: 100%;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .navlinks {
+    display: none; /* Hide navlinks on mobile */
+  }
+
+  .nav-icon {
+    display: block; /* Show the account icon */
+  }
+
+  .hero-section {
+    height: 60vh;
+  }
+
+  .content {
+    padding: 10px;
+  }
+}
