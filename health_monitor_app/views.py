@@ -4,7 +4,11 @@ from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from django.contrib.auth import authenticate
-
+from django.http import JsonResponse
+from django.contrib.auth.models import User
+from django.contrib.auth import authenticate, login
+from django.http import JsonResponse
+from rest_framework.decorators import api_view
 
 @api_view(['GET', 'POST'])
 def health_data(request):
@@ -54,16 +58,45 @@ def ask_ai(request):
 
 
 
+
+
 @api_view(['POST'])
 def login_view(request):
     email = request.data.get('email')
     password = request.data.get('password')
 
     if email and password:
+        # Check if the user exists
         user = authenticate(request, username=email, password=password)
+        
         if user is not None:
+            # If user exists, return success
             return JsonResponse({'status': 'success', 'message': 'Login successful!'})
         else:
-            return JsonResponse({'status': 'error', 'message': 'Invalid credentials'}, status=400)
+            # If the user does not exist, create a new user (register)
+            try:
+                # Create a new user
+                user = User.objects.create_user(username=email, email=email, password=password)
+                # Automatically log the user in
+                login(request, user)
+                return JsonResponse({'status': 'success', 'message': 'User created and logged in successfully!'})
+            except Exception as e:
+                return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Email and password are required'}, status=400)
+
+
+@api_view(['POST'])
+def signup_view(request):
+    email = request.data.get('email')
+    password = request.data.get('password')
+
+    if email and password:
+        try:
+            # Create a new user
+            user = User.objects.create_user(username=email, email=email, password=password)
+            return JsonResponse({'status': 'success', 'message': 'User created successfully!'})
+        except Exception as e:
+            return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
     else:
         return JsonResponse({'status': 'error', 'message': 'Email and password are required'}, status=400)
