@@ -3,6 +3,8 @@ import requests
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
+from django.contrib.auth import authenticate
+
 
 @api_view(['GET', 'POST'])
 def health_data(request):
@@ -48,3 +50,20 @@ def ask_ai(request):
         return JsonResponse({'response': ai_answer})
     else:
         return JsonResponse({'response': 'No query provided'}, status=400)
+
+
+
+
+@api_view(['POST'])
+def login_view(request):
+    email = request.data.get('email')
+    password = request.data.get('password')
+
+    if email and password:
+        user = authenticate(request, username=email, password=password)
+        if user is not None:
+            return JsonResponse({'status': 'success', 'message': 'Login successful!'})
+        else:
+            return JsonResponse({'status': 'error', 'message': 'Invalid credentials'}, status=400)
+    else:
+        return JsonResponse({'status': 'error', 'message': 'Email and password are required'}, status=400)
