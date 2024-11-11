@@ -1,9 +1,9 @@
 import React from "react";
 import "./CustomFooter.css";
 
-const CustomFooter = () => {
+const CustomFooter = React.forwardRef((props, ref) => {
   return (
-    <footer className="custom-footer">
+    <footer ref={ref} className="custom-footer">
       <div className="footer-container">
         {/* About Section */}
         <div className="footer-section about">
@@ -17,7 +17,7 @@ const CustomFooter = () => {
             providers, and organizations, empowering them with data-driven
             insights to track and improve health outcomes. Currently, we cover
             multiple regions, impacting millions of lives with personalized
-            health monitoring solutions
+            health monitoring solutions.
           </p>
           <p className="health-details">
             <span>What We Do:</span> We track real-time health data to monitor
@@ -154,6 +154,6 @@ const CustomFooter = () => {
       </div>
     </footer>
   );
-};
+});
 
 export default CustomFooter;

@@ -15,24 +15,35 @@ const PersonalUserDetails = () => {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    if (name === "month" || name === "day" || name === "year") {
-      setForm((prevForm) => ({
-        ...prevForm,
-        dateOfBirth: { ...prevForm.dateOfBirth, [name]: value },
-      }));
-    } else if (name === "sex") {
-      setForm((prevForm) => ({ ...prevForm, sex: value }));
-    } else if (name === "units") {
-      setForm((prevForm) => ({ ...prevForm, units: value }));
-    } else if (name === "timeZone") {
-      setForm((prevForm) => ({ ...prevForm, timeZone: value }));
-    } else if (name === "recaptcha") {
-      setForm((prevForm) => ({ ...prevForm, recaptcha: checked }));
-    } else {
-      setForm((prevForm) => ({
-        ...prevForm,
-        height: { ...prevForm.height, [name]: value },
-      }));
+
+    // Group fields by category to reduce repetition
+    const fieldMapping = {
+      month: "dateOfBirth",
+      day: "dateOfBirth",
+      year: "dateOfBirth",
+      sex: "sex",
+      units: "units",
+      timeZone: "timeZone",
+      recaptcha: "recaptcha",
+      feet: "height",
+      inches: "height",
+    };
+
+    if (fieldMapping[name]) {
+      setForm((prevForm) => {
+        if (name === "month" || name === "day" || name === "year") {
+          return {
+            ...prevForm,
+            dateOfBirth: { ...prevForm.dateOfBirth, [name]: value },
+          };
+        } else if (name === "sex" || name === "units" || name === "timeZone") {
+          return { ...prevForm, [fieldMapping[name]]: value };
+        } else if (name === "recaptcha") {
+          return { ...prevForm, recaptcha: checked };
+        } else {
+          return { ...prevForm, height: { ...prevForm.height, [name]: value } };
+        }
+      });
     }
   };
 
