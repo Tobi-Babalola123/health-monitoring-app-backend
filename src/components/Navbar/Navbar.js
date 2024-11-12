@@ -55,7 +55,7 @@ const Navbar = ({ isScrolled }) => {
           </Link>
         </li>
         <li>
-          <Link to="/company" className="dropbtn">
+          <Link to="/companyPage" className="dropbtn">
             Company
           </Link>
         </li>

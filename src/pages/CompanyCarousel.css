@@ -1,0 +1,66 @@
+/* HealthCarousel.css */
+
+/* Spotlight carousel container for CompanyCarousel */
+.company-spotlight-carousel {
+  position: relative;
+}
+
+/* Each carousel slide */
+.carousel-slide {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Caption container */
+.carousel-caption {
+  position: absolute;
+  bottom: 30px; /* Adjust positioning */
+  left: 20px;
+  color: white;
+  background: rgba(152, 149, 149, 0.7); /* More visible background */
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 18px; /* Slightly bigger font for better visibility */
+  opacity: 0; /* Start hidden */
+  transform: translateY(20px); /* Start off-screen for smooth transition */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 10; /* Ensure the caption is above other elements */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* Title inside the caption */
+.carousel-caption-title {
+  font-size: 1.2em; /* Larger text for the title */
+  font-weight: bold;
+}
+
+/* Subtext inside the caption */
+.carousel-subtext {
+  font-size: 1em;
+  margin-top: 5px; /* Space between title and subtext */
+  opacity: 1; /* Start hidden */
+  transform: translateY(10px); /* Start with a slight slide-in effect */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* On hover, show caption and subtext */
+.carousel-slide:hover .carousel-caption {
+  opacity: 1; /* Show caption */
+  transform: translateY(0); /* Bring caption into view */
+}
+
+.carousel-slide:hover .carousel-caption .carousel-subtext {
+  opacity: 1; /* Show subtext */
+  transform: translateY(0); /* Bring subtext into view */
+}
+
+/* Ensure images fill the slide */
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Maintain aspect ratio */
+}

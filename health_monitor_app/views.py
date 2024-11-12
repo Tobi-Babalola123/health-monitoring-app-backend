@@ -3,23 +3,30 @@ import requests
 from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from django.contrib.auth import authenticate
-from django.http import JsonResponse
-from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login
-from django.http import JsonResponse
-from rest_framework.decorators import api_view
+from health_monitor_app.models import CustomUser  # Ensure you're importing CustomUser from your models
 
+# Health Data API View
 @api_view(['GET', 'POST'])
 def health_data(request):
     if request.method == 'GET':
-        data = {...}  # Your health data here
+        data = {
+            'health_data': {
+                'steps': 5000,
+                'heart_rate': 72,
+                'calories_burned': 150,
+                'exercise_minutes': 45,
+            }  # Replace with actual health data
+        }
         return Response(data)
     elif request.method == 'POST':
         new_data = request.data
+        # Handle the new data received
+        # You can save it to the database or process it as needed
         return Response({"status": "success"})
 
-# AI response view
+
+# AI Response API View
 API_KEY = 'AIzaSyCP7bzPOmyy0qFQlNQPrtKDsrcjZO476ZM'
 API_URL = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent'
 
@@ -56,9 +63,7 @@ def ask_ai(request):
         return JsonResponse({'response': 'No query provided'}, status=400)
 
 
-
-
-
+# Login and Signup API Views
 
 @api_view(['POST'])
 def login_view(request):
@@ -66,22 +71,14 @@ def login_view(request):
     password = request.data.get('password')
 
     if email and password:
-        # Check if the user exists
+        # Check if the user exists and authenticate
         user = authenticate(request, username=email, password=password)
-        
         if user is not None:
-            # If user exists, return success
+            # If successful, log the user in
+            login(request, user)
             return JsonResponse({'status': 'success', 'message': 'Login successful!'})
         else:
-            # If the user does not exist, create a new user (register)
-            try:
-                # Create a new user
-                user = User.objects.create_user(username=email, email=email, password=password)
-                # Automatically log the user in
-                login(request, user)
-                return JsonResponse({'status': 'success', 'message': 'User created and logged in successfully!'})
-            except Exception as e:
-                return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
+            return JsonResponse({'status': 'error', 'message': 'Invalid credentials'}, status=400)
     else:
         return JsonResponse({'status': 'error', 'message': 'Email and password are required'}, status=400)
 
@@ -90,13 +87,22 @@ def login_view(request):
 def signup_view(request):
     email = request.data.get('email')
     password = request.data.get('password')
+    password_confirmation = request.data.get('passwordConfirmation')
 
-    if email and password:
+    print(f"Received data: email={email}, password={password}, password_confirmation={password_confirmation}")
+    
+    if email and password and password_confirmation:
+        if password != password_confirmation:
+            return JsonResponse({'status': 'error', 'message': 'Passwords do not match'}, status=400)
+        
+        if CustomUser.objects.filter(email=email).exists():
+            return JsonResponse({'status': 'error', 'message': 'Email already in use'}, status=400)
+        
         try:
-            # Create a new user
-            user = User.objects.create_user(username=email, email=email, password=password)
+            # Use create_user, which will hash the password automatically
+            user = CustomUser.objects.create_user(email=email, password=password)
             return JsonResponse({'status': 'success', 'message': 'User created successfully!'})
         except Exception as e:
             return JsonResponse({'status': 'error', 'message': str(e)}, status=400)
     else:
-        return JsonResponse({'status': 'error', 'message': 'Email and password are required'}, status=400)
+        return JsonResponse({'status': 'error', 'message': 'Email, password, and password confirmation are required'}, status=400)

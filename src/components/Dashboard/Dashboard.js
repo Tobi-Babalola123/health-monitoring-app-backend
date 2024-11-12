@@ -29,81 +29,157 @@ const fetchHealthData = async () => {
 };
 
 const Dashboard = ({ footerRef }) => {
-  const handleContactClick = () => {
-    if (footerRef.current) {
-      // Scroll to the footer
-      footerRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  }; // <-- Add this closing brace
-
-  const cards = [
+  const items = [
     {
-      image: "/img/team.jpg",
-      heading: "ABOUT US",
-      text: "Learn more about our mission to improve health and well-being worldwide.",
-      buttonText: "Read More",
-      backText:
-        "At our core, we strive to enhance health outcomes globally. Our dedicated team works tirelessly to innovate and provide the best health monitoring solutions tailored for everyone.",
+      icon: "/img/medical-team.png",
+      title: "Care Teams",
+      description:
+        "Easily enable caregivers to view your treatment progress remotely.",
     },
     {
-      image: "/img/healthcaretech.jpg",
-      heading: "HEALTH",
-      text: "Stay informed on the latest in healthcare technology and innovations.",
-      buttonText: "Explore Health",
-      backText:
-        "Embrace the future of healthcare with cutting-edge technology. Stay updated with trends and innovations that are revolutionizing patient care and health management.",
+      icon: "/img/time.png",
+      title: "Reminders",
+      description:
+        "Manage reminders for medication, symptoms & measurement checks.",
     },
     {
-      image: "/img/youngman.jpg",
-      heading: "LATEST NEWS",
-      text: "Get updates on the latest news in health monitoring.",
-      buttonText: "Read News",
-      backText:
-        "Stay informed about the latest trends and breakthroughs in health monitoring and technology. Our news section is updated regularly to keep you in the loop.",
+      icon: "/img/nutrition.png",
+      title: "Care Plans",
+      description:
+        "Keep your treatment details in one place. See interactions & effects.",
     },
     {
-      image: "/img/patientcare.jpg",
-      heading: "OUR SERVICES",
-      text: "Discover our range of health monitoring services designed to keep you safe.",
-      buttonText: "Learn More",
-      backText:
-        "We offer a variety of health monitoring services to cater to your needs. From regular check-ups to advanced diagnostics, our services ensure you stay healthy and informed.",
+      icon: "/img/calendar.png",
+      title: "Appointments",
+      description:
+        "Save dates for yourself or a dependent or share with your team.",
     },
     {
-      image: "/img/customer support.jpg",
-      heading: "SUPPORT",
-      text: "Need help? Reach out to our customer support team anytime.",
-      buttonText: "Contact Us",
-      backText:
-        "Our dedicated support team is here to assist you 24/7. Whether you have questions about our services or need technical assistance, we’re just a message away!",
+      icon: "/img/insurance.png",
+      title: "Check-Ins",
+      description:
+        "Record symptoms, measurements, medicine, nutrition, activity, therapies, and notes periodically.",
+    },
+    {
+      icon: "/img/cloud.png",
+      title: "Integrations",
+      description:
+        "Automatically sync your data from wearables, Apple Health, or Google.",
+    },
+    {
+      icon: "/img/medics.png",
+      title: "Reports",
+      description:
+        "AI-powered charts, logs, and correlations to make sense of your check-ins.",
+    },
+    {
+      icon: "/img/goal-setting.png",
+      title: "Goals",
+      description:
+        "Set health goals for yourself and view your progress over time.",
     },
   ];
+
+  // const handleContactClick = () => {
+  //   if (footerRef.current) {
+  //     // Scroll to the footer
+  //     footerRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
+
+  const HealthFeaturesSection = () => {
+    const features = [
+      {
+        icon: "/img/notes.png",
+        title: "Track up to 84 nutrients and other compounds",
+        description:
+          "Log your meals and track all your macro and micronutrients.",
+      },
+      {
+        icon: "/img/fried-rice.png",
+        title: "Log meals, exercise and health metrics",
+        description:
+          "Plus, you can create custom foods, recipes, exercises and metrics.",
+      },
+      {
+        icon: "/img/health-check.png",
+        title: "Get valuable health reports and charts",
+        description: "Learn how nutrients and metrics correlate over time.",
+      },
+      {
+        icon: "/img/settings.png",
+        title: "Custom diet settings",
+        description:
+          "Set weight, macro and nutrient targets to meet your goals.",
+      },
+      {
+        icon: "/img/alarm.png",
+        title: "Fasting timer",
+        description:
+          "Track your intermittent fasts and see their effect over time.",
+      },
+      {
+        icon: "/img/diet.png",
+        title: "Diet support",
+        description:
+          "Whether you’re Keto, Vegan, or on one recommended by your doctor.",
+      },
+    ];
+
+    return (
+      <section className="py-12 bg-gray-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900">
+              Health Features
+            </h2>
+            <p className="mt-2 text-lg text-gray-600">
+              Explore all the tools to track and manage your health.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md"
+              >
+                {/* Replace the emoji display with an <img> tag */}
+                <div className="mb-4">
+                  <img
+                    src={feature.icon}
+                    alt={`${feature.title} icon`}
+                    className="w-16 h-16" // adjust size to fit the design
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-800 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600">{feature.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    );
+  };
+
   const [showModal, setShowModal] = useState(false);
   const [inputValue, setInputValue] = useState("");
-  // const [isScrolled, setIsScrolled] = useState(false);
   const [healthData, setHealthData] = useState([]);
   const [aiResponse, setAIResponse] = useState("");
   const cardRefs = useRef([]);
   const [visibleCards, setVisibleCards] = useState(
-    Array(cards.length).fill(false)
+    Array(6).fill(false) // Adjusted to match the number of features
   );
 
   useEffect(() => {
     const getHealthData = async () => {
       const data = await fetchHealthData();
-      setHealthData(data); // Store the fetched data in state
+      setHealthData(data);
     };
-    getHealthData(); // Call the function
+    getHealthData();
   }, []);
-
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     setIsScrolled(window.scrollY > 50);
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => window.removeEventListener("scroll", handleScroll);
-  // }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -112,7 +188,7 @@ const Dashboard = ({ footerRef }) => {
           if (entry.isIntersecting) {
             setVisibleCards((prev) => {
               const newVisibleCards = [...prev];
-              newVisibleCards[index] = true; // Set to true when in view
+              newVisibleCards[index] = true;
               return newVisibleCards;
             });
           }
@@ -130,30 +206,23 @@ const Dashboard = ({ footerRef }) => {
     return () => {
       observer.disconnect();
     };
-  }, [cards.length]);
+  }, []);
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);
   };
 
-  // const handleAIResponse = (response) => {
-  //   setAIResponse(response);
-  // };
-
   const handleAskAI = async () => {
     try {
-      // Send only the user's input to the backend
       const response = await axios.post(
         "http://localhost:5001/api/ask-ai",
-        { query: inputValue }, // Pass the inputValue as 'query'
+        { query: inputValue },
         {
           headers: {
             "Content-Type": "application/json",
           },
         }
       );
-
-      // Set the AI response from the backend response data
       setAIResponse(response.data.response);
     } catch (error) {
       console.error(
@@ -170,10 +239,13 @@ const Dashboard = ({ footerRef }) => {
 
   return (
     <div className="dashboard">
-      {/* Floating Navbar */}
       <Navbar />
 
       {/* Background Section with Image, Text, and Button */}
+      {/* <div className="relative hero-section bg-cover bg-center h-[400px] flex items-center">
+        <div className="absolute inset-0 bg-black opacity-50"></div>
+      </div> */}
+
       <div className="relative hero-section bg-cover bg-center h-[400px] flex items-center">
         <div className="absolute inset-0 bg-black opacity-50"></div>
         <div className="relative z-10 text-center">
@@ -247,7 +319,6 @@ const Dashboard = ({ footerRef }) => {
         </div>
       </div>
 
-      {/* Why We Stand Out Section */}
       <div className="why-we-stand-out-section bg-white py-12">
         <div className="text-center">
           <h2 className="text-3xl font-semibold">WHY WE STAND OUT</h2>
@@ -261,7 +332,7 @@ const Dashboard = ({ footerRef }) => {
             better and make informed decisions for a healthier life
           </p>
         </div>
-
+        {/* Rest of the "Why We Stand Out" section */}
         <div className="flex items-center justify-center py-4">
           <span className="line"></span> {/* Left line */}
           <img
@@ -362,7 +433,6 @@ const Dashboard = ({ footerRef }) => {
             image={`${process.env.PUBLIC_URL}/img/heart3dd.png`}
           />
         </div>
-
         <div className="right-section ai-card w-full md:w-1/2">
           <AICardComponent
             inputValue={inputValue}
@@ -373,27 +443,9 @@ const Dashboard = ({ footerRef }) => {
         </div>
       </div>
 
-      {/* Cards Section */}
-      <div className="cards-section specific-section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">
-        {cards.map((card, index) => (
-          <CardComponent
-            key={index}
-            ref={(el) => (cardRefs.current[index] = el)}
-            heading={card.heading}
-            icon={card.icon}
-            text={card.text}
-            buttonText={card.buttonText}
-            image={`${process.env.PUBLIC_URL}${card.image}`}
-            backText={card.backText}
-            visible={visibleCards[index]} // Pass visibility state
-            onButtonClick={
-              card.heading === "SUPPORT" ? handleContactClick : null
-            } // Trigger the scroll to footer
-          />
-        ))}
-      </div>
+      {/* Render Health Features Section */}
+      <HealthFeaturesSection />
 
-      {/* Modal Component for Health Status */}
       {showModal && (
         <ModalComponent onClose={closeModal}>
           <h2 className="text-2xl font-bold">Health Status for {inputValue}</h2>
@@ -409,9 +461,32 @@ const Dashboard = ({ footerRef }) => {
         </ModalComponent>
       )}
 
-      {/* Testimonials and Pricing Sections */}
       <TestimonialsComponent />
-      <PricingComponent />
+      <div className="max-w-6xl mx-auto px-4 py-12">
+        <h2 className="text-3xl font-semibold text-center text-gray-800 mb-10">
+          Functionality Overview
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {items.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md"
+            >
+              <div className="mb-4">
+                <img
+                  src={item.icon}
+                  alt={`${item.title} icon`}
+                  className="w-12 h-12 bg-gray-100 p-2 rounded-lg"
+                />
+              </div>
+              <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                {item.title}
+              </h3>
+              <p className="text-gray-600">{item.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

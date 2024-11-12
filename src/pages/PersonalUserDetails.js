@@ -107,7 +107,7 @@ const PersonalUserDetails = () => {
     <div className="flex h-screen overflow-hidden">
       <div className="flex flex-col items-center justify-center w-[97%] max-w-lg p-6 bg-white rounded-lg shadow-lg overflow-y-auto scrollbar-hidden h-full">
         <img
-          src="/img/logo.png"
+          src="/img/logo12.png"
           alt="Heads Up Logo"
           className="w-32 h-auto mb-4"
         />

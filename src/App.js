@@ -10,6 +10,7 @@ import CustomFooter from "./components/CustomFooter/CustomFooter";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
 import Spotlight from "./pages/SpotlightPage/SpotlightPage";
+import CompanyPage from "./pages/CompanyPage";
 import PersonalUserSignup from "./pages/PersonalUserSignup";
 import PersonalUserDetails from "./pages/PersonalUserDetails";
 import UserDashboard from "./pages/UserDashboard";
@@ -36,6 +37,7 @@ const App = () => {
   // List of paths that should not show the footer
   const pathsWithoutFooter = [
     "/signup",
+    "/signin",
     "/signup/personal",
     "/personaluserdetails",
     "/userdashboard",
@@ -56,6 +58,7 @@ const App = () => {
         <Route path="/userdashboard" element={<UserDashboard />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/spotlight" element={<Spotlight />} />
+        <Route path="/companyPage" element={<CompanyPage />} />
       </Routes>
 
       {/* Conditionally render the footer based on the current path */}

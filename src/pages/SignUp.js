@@ -23,7 +23,11 @@ const SignUp = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <header className="mb-8 text-center">
-        <img src="logo.png" alt="Heads Up Logo" className="mx-auto mb-4 w-24" />
+        <img
+          src="/img/logo12.png"
+          alt="Heads Up Logo"
+          className="mx-auto mb-4 w-24"
+        />
         <h2 className="text-2xl font-bold">Next Step: Sign up as ...</h2>
       </header>
       <div className="flex justify-center gap-8">

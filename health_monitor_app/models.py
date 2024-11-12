@@ -1,5 +1,3 @@
-# health_monitor_app/models.py
-
 from django.contrib.auth.models import AbstractBaseUser, BaseUserManager
 from django.db import models
 from django.utils.translation import gettext_lazy as _
@@ -23,11 +21,21 @@ class CustomUser(AbstractBaseUser):
     email = models.EmailField(unique=True)
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)
 
     objects = CustomUserManager()
 
     USERNAME_FIELD = 'email'
-    REQUIRED_FIELDS = []
+    REQUIRED_FIELDS = []  # You can add fields like 'first_name' if needed
 
     def __str__(self):
         return self.email
+
+    # Add the required methods for admin integration
+    def has_perm(self, perm, obj=None):
+        # Check if the user has a specific permission
+        return self.is_superuser  # If the user is a superuser, grant all permissions
+
+    def has_module_perms(self, app_label):
+        # Superusers have access to all modules
+        return self.is_superuser

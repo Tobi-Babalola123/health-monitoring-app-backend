@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const PersonalUserSignup = () => {
   const [form, setForm] = useState({
@@ -10,7 +11,7 @@ const PersonalUserSignup = () => {
     passwordConfirmation: "",
     termsAccepted: false,
   });
-
+  const [message, setMessage] = useState("");
   const navigate = useNavigate();
 
   const handleChange = (e) => {
@@ -21,26 +22,48 @@ const PersonalUserSignup = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
     if (!form.termsAccepted) {
-      alert("Please accept the terms and conditions.");
+      setMessage("Please accept the terms and conditions.");
       return;
     }
+
     if (form.password !== form.passwordConfirmation) {
-      alert("Passwords do not match.");
+      setMessage("Passwords do not match.");
       return;
     }
-    // If validation passes, navigate to PersonalUserDetails page
-    alert("Account created successfully!");
-    navigate("/personaluserdetails");
+
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/api/signup/", {
+        first_name: form.firstName,
+        last_name: form.lastName,
+        email: form.email,
+        password: form.password,
+        passwordConfirmation: form.passwordConfirmation, // Include passwordConfirmation here
+      });
+
+      if (response.data.status === "success") {
+        setMessage("Account created successfully!");
+        navigate("/personaluserdetails"); // Navigate to the next page after signup
+      } else {
+        setMessage("Signup failed. Please try again.");
+      }
+    } catch (error) {
+      setMessage("Error during signup. Please try again.");
+    }
   };
 
   return (
     <div className="flex flex-col md:flex-row h-screen">
       {/* Left Side: Form */}
       <div className="flex-1 flex flex-col justify-start items-center bg-white p-8 shadow-md overflow-auto scrollbar-hidden">
-        <img src="/img/logo.png" alt="Heads Up Logo" className="mb-4" />
+        <img
+          src="/img/logo12.png"
+          alt="Heads Up Logo"
+          className="w-24 h-auto"
+        />
         <h2 className="text-2xl font-bold mb-2 mt-4">Get started for free</h2>
         <p className="mb-4">1 month free trial, no commitments.</p>
         <form onSubmit={handleSubmit} className="w-full max-w-sm">
@@ -126,6 +149,10 @@ const PersonalUserSignup = () => {
               Create Account
             </button>
           </div>
+
+          {message && (
+            <p className="text-center text-red-600 mb-4">{message}</p>
+          )}
 
           <p className="text-center mb-4">- or sign up with -</p>
 

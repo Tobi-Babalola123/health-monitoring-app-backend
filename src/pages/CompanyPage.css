@@ -1,0 +1,454 @@
+/* SpotlightPage.css */
+.spotlight-page {
+  font-family: "Poppins", serif;
+  padding: 20px;
+  width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  /* margin-top: 60px; */
+}
+
+.spotlight-page .navbar {
+  width: 100%; /* Full width */
+  /* position: relative;  */
+  z-index: 1000;
+  background-color: transparent; /* Adjust as needed */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* .spotlight-page .carousel {
+  } */
+
+.section-header {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #007b9c; /* Adjust this color as needed */
+  text-align: center;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  color: #333;
+  margin-bottom: 50px;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.health-surveillance {
+  text-align: center;
+}
+
+.spotlight-page .spotlight-header {
+  text-align: center;
+  padding: 20px;
+  background: #e0f7fa;
+}
+
+.spotlight-page .spotlight-header h1 {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.spotlight-page .spotlight-header h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.spotlight-carousel .carousel-caption {
+  position: absolute;
+  bottom: 20px; /* Space from the bottom */
+  left: 20px; /* Align left */
+  color: white; /* Caption text color */
+  z-index: 10; /* Ensure it stays on top */
+}
+
+.spotlight-carousel .carousel img {
+  width: 100%; /* Ensures images fit the carousel width */
+  height: 400px; /* Set a specific height for images */
+  object-fit: cover;
+}
+
+.spotlight-carousel {
+  position: relative;
+  width: 100%; /* Full width */
+  max-height: 400px; /* Set a max height for the carousel */
+  overflow: hidden; /* Prevents overflow issues */
+}
+
+.health-surveillance {
+  text-align: center;
+  padding: 2rem;
+}
+
+.health-surveillance h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #005555; /* Change to your brand color */
+}
+
+.surveillance-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin: 1rem;
+  max-width: 300px;
+}
+
+.surveillance-item h3 {
+  color: #2a9d8f; /* Adjust for your theme */
+  margin-bottom: 0.75rem;
+}
+
+.surveillance-item p {
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.health-surveillance .grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.surveillance-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 0 0;
+}
+
+/* Updated CSS Styling */
+
+/* General Styling for Section */
+.nas-surveillance {
+  padding: 60px 40px;
+  background-color: #f1f1f1; /* Slight background tint */
+  font-family: "Montserrat", sans-serif;
+  color: #333;
+}
+
+/* Main Container: Two-Column Layout */
+.nas-content-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Left Column: NAS Text Content */
+.nas-text-container {
+  width: 48%; /* Slightly smaller to leave space for vertical line */
+}
+
+.nas-text-container h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #007b9c; /* Adjusted color to match branding */
+}
+
+.nas-text {
+  font-size: 14px;
+  text-align: justify;
+  color: #555;
+  line-height: 1.75;
+}
+
+/* Vertical Line Styling */
+.vertical-line {
+  position: absolute;
+  left: 50%; /* Centered between two columns */
+  top: 0;
+  height: 100%;
+  width: 2px;
+  border-left: 2px dashed #aaa; /* Dashed vertical line */
+}
+
+/* Right Column: Recommendations */
+.recommendation-container {
+  width: 48%; /* Slightly smaller column for icons */
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* More space between recommendations */
+  padding-left: 30px;
+}
+
+/* Recommendation Item Styling */
+.recommendation {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* Icon Styling */
+.icon {
+  width: 60px;
+  height: 60px;
+  background-color: #e0f7fa;
+  border-radius: 50%; /* Ensures the shape is circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  color: #007b9c;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+  flex-shrink: 0; /* Prevents shrinking in flex containers */
+}
+
+/* Recommendation Text Styling */
+.recommendation h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+  color: #2a9d8f;
+}
+
+.recommendation p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nas-content-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .nas-text-container,
+  .recommendation-container {
+    width: 100%;
+  }
+
+  .vertical-line {
+    display: none;
+  }
+}
+
+/* General Styling */
+.population-health {
+  padding: 50px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  background-color: #f9f9f9;
+}
+
+.population-health h2 {
+  font-size: 2rem;
+  color: #007b9c;
+  margin-bottom: 30px;
+}
+
+.health-grid {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.health-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  overflow: hidden;
+  text-align: left;
+}
+
+.health-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.health-item h3 {
+  font-size: 1.25rem;
+  margin: 15px;
+  color: #2a9d8f;
+}
+
+.health-item p {
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 15px 15px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .health-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* General Styling for the Section */
+/* .nas-surveillance {
+    padding: 50px;
+    background-color: #f9f9f9;
+    font-family: "Montserrat", sans-serif;
+    line-height: 1.6;
+    color: #333;
+  } */
+
+/* Main Container for Two-Column Layout */
+/* .nas-content-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+  } */
+
+/* Left Column: NAS Text Content */
+/* .nas-text-container {
+    width: 50%;
+  } */
+
+/* .nas-text-container h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #008b8b;
+  }
+  
+  .nas-text {
+    font-size: 16px;
+    text-align: justify;
+    color: #555;
+  } */
+
+/* Vertical Line */
+/* .vertical-line {
+    position: absolute;
+    left: 50%; /* Align in the center of the container */
+/* top: 0; */
+/* width: 2px; Thickness of the line */
+/* height: 100%; Full height of the container */
+/* background-color: transparent; Make base transparent */
+/* border-left: 2px dashed #ccc; Create dashed effect */
+/* z-index: 0; Keep behind content */
+/* } */
+
+/* Right Column: Recommendations */
+/* .recommendation-container {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: relative;
+    padding-left: 80px;
+  } */
+
+/* Recommendation Item */
+/* .recommendation {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    margin-bottom: 50px;
+  } */
+
+/* Icon Styling */
+/* .icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%; /* Perfect circle */
+/* background-color: #e0e0e0; Light grey background */
+/* display: flex; */
+/* justify-content: center; */
+/* align-items: center; */
+/* font-size: 28px; */
+/* margin: 0 auto; Center icon horizontally */
+/* position: relative; */
+/* z-index: 1; Ensure icon stays above the line */
+/* } */
+
+/* Title and Text */
+/* .recommendation h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .recommendation p {
+    font-size: 16px;
+    color: #666;
+  } */
+
+/* Responsive Design */
+/* @media (max-width: 768px) {
+    .nas-content-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .nas-text-container,
+    .recommendation-container {
+      width: 100%;
+    }
+  
+    .vertical-line {
+      display: none;
+    }
+  } */
+
+.spotlight-page .health-surveillance,
+.spotlight-page .nas-surveillance,
+.spotlight-page .population-health,
+.spotlight-page .antimicrobial-benchmarking,
+.spotlight-page .public-policy,
+.spotlight-page .opioid-rehabilitation {
+  margin: 40px 0;
+}
+
+.spotlight-page .surveillance-item,
+.spotlight-page .recommendation,
+.spotlight-page .health-item,
+.spotlight-page .comparison,
+.spotlight-page .policy-item {
+  margin: 20px 0;
+}
+
+.spotlight-page .spotlight-footer {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  background: #004d40;
+  color: white;
+}
+
+.spotlight-page .footer-section {
+  width: 30%;
+}
+
+.spotlight-page .footer-section h4 {
+  margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+  .spotlight-page .spotlight-footer {
+    flex-direction: column; /* Stack footer sections on small screens */
+  }
+
+  .spotlight-page .footer-section {
+    width: 100%; /* Make footer sections full width on mobile */
+    margin-bottom: 10px; /* Add spacing between sections */
+  }
+}

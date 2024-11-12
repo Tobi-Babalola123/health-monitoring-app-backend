@@ -42,7 +42,6 @@ const UserDashboard = () => {
       id: 1,
       title: "Health Card 1",
       date: "2024-11-01",
-      icon: "❤️",
       value: "100",
       link: "#",
     },
@@ -50,23 +49,26 @@ const UserDashboard = () => {
       id: 2,
       title: "Health Card 2",
       date: "2024-11-02",
-      icon: "💪",
       value: "200",
       link: "#",
     },
   ]);
 
-  // Handle adding a new card (you can implement this as needed)
   const handleAddCard = () => {
     const newCard = {
-      id: cards.length + 1, // Generate a new ID
+      id: cards.length + 1,
       title: "New Health Card",
       date: "2024-11-11",
-      icon: "🏃‍♂️",
       value: "0",
       link: "#",
     };
     setCards([...cards, newCard]);
+  };
+
+  // Handle deleting a card
+  const handleDeleteCard = (cardId) => {
+    const updatedCards = cards.filter((card) => card.id !== cardId);
+    setCards(updatedCards);
   };
 
   // Handle editing a card (open a modal or update the card directly)
@@ -83,12 +85,6 @@ const UserDashboard = () => {
       );
       setCards(updatedCards);
     }
-  };
-
-  // Handle deleting a card
-  const handleDeleteCard = (cardId) => {
-    const updatedCards = cards.filter((card) => card.id !== cardId);
-    setCards(updatedCards);
   };
 
   const [darkMode, setDarkMode] = useState(false);
@@ -113,6 +109,7 @@ const UserDashboard = () => {
           healthData={healthData}
           setHealthData={setHealthData}
           cards={cards}
+          handleAddCard={handleAddCard}
         />
         <DashboardContent
           healthData={healthData}
@@ -129,7 +126,7 @@ const Sidebar = ({ darkMode, toggleDarkMode }) => (
   <div className="w-64 bg-gray-100 p-6 flex flex-col space-y-6 fixed h-screen">
     <div className="text-center mb-4">
       <img
-        src="/img/avatar-placeholder.png"
+        src="/img/profile.png"
         alt="User"
         className="w-16 h-16 rounded-full mx-auto"
       />
@@ -266,6 +263,8 @@ const Header = ({
   healthData,
   setHealthData,
   cards,
+  handleAddCard,
+  setCards,
 }) => {
   const [addDataDropdownOpen, setAddDataDropdownOpen] = useState(false);
   const [nestedDropdown, setNestedDropdown] = useState(null);
@@ -277,6 +276,7 @@ const Header = ({
   const [daysInMonth, setDaysInMonth] = useState([]);
   const [dataValue, setDataValue] = useState("");
   const [editingCard, setEditingCard] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState(null);
 
   const handleEditCard = (cardId) => {
     const cardToEdit = cards.find((card) => card.id === cardId);
@@ -299,6 +299,19 @@ const Header = ({
     setHealthData([...healthData, newData]); // Update healthData here
     setModalOpen(false);
   };
+
+  // Handle adding a new card (you can implement this as needed)
+  // const handleAddCard = () => {
+  //   const newCard = {
+  //     id: cards.length + 1, // Generate a new ID
+  //     title: "New Health Card",
+  //     date: "2024-11-11",
+  //     icon: "🏃‍♂️",
+  //     value: "0",
+  //     link: "#",
+  //   };
+  //   setCards([...cards, newCard]);
+  // };
 
   const months = [
     "Jan",
@@ -330,10 +343,24 @@ const Header = ({
   const dataCategories = [
     {
       title: "Cardiovascular",
+      icon: (
+        <img
+          src="/img/blood-pressure.png"
+          alt="Cardiovascular"
+          className="w-6 h-6 mr-2"
+        />
+      ),
       items: ["Blood Pressure", "VO2 Max"],
     },
     {
       title: "Lifestyle",
+      icon: (
+        <img
+          src="/img/quit-smoking.png"
+          alt="Lifestyle"
+          className="w-6 h-6 mr-2"
+        />
+      ),
       items: [
         "Alcohol Intake",
         "Caffeine Intake",
@@ -344,10 +371,20 @@ const Header = ({
     },
     {
       title: "Medications",
+      icon: (
+        <img
+          src="/img/siringe,png"
+          alt="Medications"
+          className="w-6 h-6 mr-2"
+        />
+      ),
       items: ["GLP-1 Peptide"],
     },
     {
       title: "Metabolism",
+      icon: (
+        <img src="/img/glucose.png" alt="Metabolism" className="w-6 h-6 mr-2" />
+      ),
       items: [
         "Carb Tolerance Test",
         "Fasting",
@@ -361,10 +398,24 @@ const Header = ({
     },
     {
       title: "Nutrition",
+      icon: (
+        <img
+          src="/img/nutrition-plan.png"
+          alt="Nutrition"
+          className="w-6 h-6 mr-2"
+        />
+      ),
       items: ["Bristol Score", "Macronutrient"],
     },
     {
       title: "Rest & Recovery",
+      icon: (
+        <img
+          src="/img/sleeping.png"
+          alt="Rest & Recovery"
+          className="w-6 h-6 mr-2"
+        />
+      ),
       items: [
         "AM Readiness",
         "Cryotherapy",
@@ -380,6 +431,9 @@ const Header = ({
     },
     {
       title: "Vitals",
+      icon: (
+        <img src="/img/thermometer.png" alt="Vitals" className="w-6 h-6 mr-2" />
+      ),
       items: [
         "Basal Temperature",
         "Blood Oxygen",
@@ -390,13 +444,40 @@ const Header = ({
     },
     {
       title: "Custom",
+      icon: (
+        <img
+          src="/img/customization.png"
+          alt="Custom"
+          className="w-6 h-6 mr-2"
+        />
+      ),
       items: ["Create New"],
     },
   ];
 
+  // Function to handle category selection
+  const handleCategorySelect = (categoryTitle) => {
+    const category = dataCategories.find(
+      (category) => category.title === categoryTitle
+    );
+    setSelectedCategory(category); // Set the selected category
+  };
+
+  // Function to handle adding a new card
+  // const handleAddCard = () => {
+  //   const newCard = {
+  //     id: cards.length + 1, // Generate a new ID
+  //     title: "New Health Card",
+  //     date: "2024-11-11",
+  //     value: "0",
+  //     link: "#",
+  //   };
+  //   setCards([...cards, newCard]);
+  // };
+
   return (
     <header className="flex items-center justify-between p-6 border-b">
-      <img src="/img/logo.png" alt="Heads Up Logo" className="h-10" />
+      <img src="/img/logo12.png" alt="Heads Up Logo" className="h-10" />
       <div className="flex space-x-4">
         <button className="bg-blue-500 text-white px-4 py-2 rounded-lg">
           Upgrade
@@ -447,7 +528,7 @@ const Header = ({
             </div>
           )}
         </div>
-        <button className="bg-blue-100 text-blue-500 px-4 py-2 rounded-lg">
+        <button className="bg-blue-100 text-blue-500 px-4 py-2 rounded-lg w-full sm:w-auto">
           Connect Data
         </button>
       </div>
@@ -457,7 +538,7 @@ const Header = ({
         onClose={() => setModalOpen(false)}
         title="Add Data"
       >
-        <div className="flex flex-col space-y-4 p-6">
+        <div className="flex flex-col space-y-4 p-6 w-full max-w-xl mx-auto">
           {/* Data type */}
           <div>
             <label className="text-gray-600 font-semibold">Data type</label>
@@ -600,7 +681,7 @@ const DashboardContent = ({
   };
 
   return (
-    <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto">
+    <div className="p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 overflow-y-auto">
       {healthData.map((card) => (
         <HealthCard
           key={card.id}
@@ -680,49 +761,105 @@ const dashboardItems = [
   {
     title: "Heart Rate",
     date: "Last updated 3 mins ago",
-    icon: "❤️",
+    icon: (
+      <div className="flex justify-center items-center">
+        <img
+          src="/img/blood-pressure.png" // Ensure this path is correct
+          alt="Heart Rate"
+          className="w-16 h-16 object-contain"
+        />
+      </div>
+    ),
     value: "72 bpm",
     link: "/heart-rate",
   },
   {
     title: "Steps",
     date: "Last updated 10 mins ago",
-    icon: "👟",
+    icon: (
+      <div className="flex justify-center items-center">
+        <img
+          src="/img/trainers.png" // Ensure this path is correct
+          alt="Steps"
+          className="w-16 h-16 object-contain"
+        />
+      </div>
+    ),
     value: "5,432 steps",
     link: "/steps",
   },
   {
     title: "Fasting (Manual)",
     date: "11/03/24, 07:09 AM",
-    icon: "⏳", // Replace with actual icon/image
+    icon: (
+      <div className="flex justify-center items-center">
+        <img
+          src="/img/iftar.png" // Ensure this path is correct
+          alt="Fasting"
+          className="w-16 h-16 object-contain"
+        />
+      </div>
+    ),
     value: "Elapsed",
     link: "/summary/fasting",
   },
   {
     title: "Blood Pressure (Manual)",
     date: "11/03/24, 07:09 AM",
-    icon: "💉", // Replace with actual icon/image
+    icon: (
+      <div className="flex justify-center items-center">
+        <img
+          src="/img/vitals2.png" // Ensure this path is correct
+          alt="Blood Pressure"
+          className="w-16 h-16 object-contain"
+        />
+      </div>
+    ),
     value: "mmHg",
     link: "/summary/blood-pressure",
   },
   {
     title: "Ketones - Blood (Manual)",
     date: "11/03/24, 07:09 AM",
-    icon: "🧬", // Replace with actual icon/image
+    icon: (
+      <div className="flex justify-center items-center">
+        <img
+          src="/img/blood-test.png" // Ensure this path is correct
+          alt="Ketones - Blood"
+          className="w-16 h-16 object-contain"
+        />
+      </div>
+    ),
     value: "mmol/L",
     link: "/summary/ketones",
   },
   {
     title: "Glucose (Manual)",
     date: "11/03/24, 07:09 AM",
-    icon: "🍬", // Replace with actual icon/image
+    icon: (
+      <div className="flex justify-center items-center">
+        <img
+          src="/img/glucose.png" // Ensure this path is correct
+          alt="Glucose"
+          className="w-16 h-16 object-contain"
+        />
+      </div>
+    ),
     value: "mg/dL",
     link: "/summary/glucose",
   },
   {
     title: "Time Asleep (Manual)",
     date: "11/03/24, 07:09 AM",
-    icon: "💤", // Adjust as necessary
+    icon: (
+      <div className="flex justify-center items-center">
+        <img
+          src="/img/sleeping.png" // Ensure this path is correct
+          alt="Time Asleep"
+          className="w-16 h-16 object-contain"
+        />
+      </div>
+    ),
     value: "8 hours",
     link: "/summary/sleep",
   },
