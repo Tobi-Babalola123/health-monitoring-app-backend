@@ -54,6 +54,7 @@ def ask_ai(request):
         if response.status_code == 200:
             api_response = response.json()
             ai_answer = api_response.get("content", "No answer received.")
+            
         else:
             ai_answer = "Failed to get a valid response from AI."
         

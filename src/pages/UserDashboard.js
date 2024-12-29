@@ -300,19 +300,6 @@ const Header = ({
     setModalOpen(false);
   };
 
-  // Handle adding a new card (you can implement this as needed)
-  // const handleAddCard = () => {
-  //   const newCard = {
-  //     id: cards.length + 1, // Generate a new ID
-  //     title: "New Health Card",
-  //     date: "2024-11-11",
-  //     icon: "🏃‍♂️",
-  //     value: "0",
-  //     link: "#",
-  //   };
-  //   setCards([...cards, newCard]);
-  // };
-
   const months = [
     "Jan",
     "Feb",

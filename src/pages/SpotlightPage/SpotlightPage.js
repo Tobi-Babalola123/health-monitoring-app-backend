@@ -218,14 +218,54 @@ const SpotlightPage = () => {
             <h2>RECOMMENDATION: ANTIBIOTIC STEWARDSHIP MONITORING</h2>
             <p className="nas-text">
               With antibiotic resistance projected to be the leading cause of
-              death by 2050, effective antibiotic stewardship is critical.
-              Health Monitoring recommends using real-time data to track and
-              benchmark antibiotic usage across hospitals and healthcare
-              systems. By sharing insights from stewardship programs, healthcare
-              providers can assess current practices, identify areas for
-              improvement, and optimize antibiotic use to combat resistance,
-              ultimately improving patient outcomes and reducing the spread of
-              resistant infections.
+              death by 2050, effective antibiotic stewardship is critical to the
+              future of global health. Health Monitoring recommends using
+              real-time data to track and benchmark antibiotic usage across
+              hospitals and healthcare systems, enabling providers to monitor
+              trends and respond proactively to emerging resistance patterns. By
+              leveraging technology and sharing insights from successful
+              stewardship programs, healthcare providers can assess current
+              practices, identify areas for improvement, and implement targeted
+              interventions to optimize antibiotic use. This comprehensive
+              approach not only helps combat resistance but also improves
+              patient outcomes by reducing the risk of treatment failures,
+              limiting adverse drug reactions, and preventing the spread of
+              resistant infections within communities. Enhanced data integration
+              supports clinicians in adhering to evidence-based prescribing
+              guidelines, reducing unnecessary antibiotic prescriptions, and
+              ensuring appropriate treatment durations. Collaboration across
+              healthcare facilities and regions enables the development of
+              unified strategies to tackle resistance at a systemic level,
+              fostering innovation in diagnostics, surveillance, and
+              antimicrobial development. Furthermore, comprehensive training
+              programs for healthcare professionals can strengthen their
+              understanding of antimicrobial stewardship principles, enabling
+              them to make informed decisions that align with global best
+              practices. Efforts to combat antibiotic resistance must also
+              extend beyond hospitals, integrating community-level interventions
+              to address misuse in outpatient settings and agricultural sectors,
+              where overuse often fuels resistance. Public awareness campaigns
+              aimed at educating individuals about the dangers of antibiotic
+              misuse and the importance of adherence to prescribed treatments
+              can significantly influence behaviors, empowering patients to
+              become active participants in the fight against resistance. On a
+              global scale, data sharing between nations can enhance the ability
+              to detect and contain resistance outbreaks, fostering
+              international cooperation in research and development for new
+              antibiotics and alternative therapies. Governments, regulatory
+              bodies, and healthcare organizations must work together to
+              prioritize investments in infrastructure that supports
+              surveillance and stewardship efforts. Robust stewardship programs
+              also reduce the economic burden on healthcare systems by
+              minimizing costs associated with prolonged hospital stays,
+              second-line treatments, and the management of complex resistant
+              infections. By preventing resistance from escalating into a
+              full-blown public health crisis, such programs safeguard not only
+              the efficacy of antibiotics for future generations but also the
+              resilience of healthcare systems in the face of an ever-changing
+              landscape of infectious diseases. This multipronged approach
+              ensures that antibiotics remain a cornerstone of modern medicine,
+              preserving their life-saving potential for decades to come.
             </p>
           </div>
 
@@ -400,7 +440,23 @@ const SpotlightPage = () => {
               real-time access to this data, healthcare professionals can make
               informed decisions to enhance treatment plans, improve patient
               outcomes, and ultimately contribute to reducing opioid dependency
-              and overdose rates in the community.
+              and overdose rates in the community. Additionally, the platform
+              enables collaboration among care teams, counselors, and family
+              members, fostering a holistic approach to recovery by addressing
+              both the medical and psychosocial aspects of treatment. The app’s
+              predictive analytics feature can help identify patterns associated
+              with higher risks of relapse, allowing providers to proactively
+              implement preventative measures. For example, triggers such as
+              missed therapy sessions or increased stress levels can alert
+              clinicians to intervene early, providing timely support to
+              patients before setbacks occur. This proactive strategy minimizes
+              relapse incidents and strengthens patients' chances of sustained
+              recovery. Furthermore, Health Monitoring emphasizes the importance
+              of post-rehabilitation care, offering tools to track ongoing
+              therapy attendance, medication adherence, and participation in
+              support groups. These long-term metrics ensure that patients
+              remain engaged in their recovery journey, reducing the likelihood
+              of returning to substance use.
             </p>
           </div>
 

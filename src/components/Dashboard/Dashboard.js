@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faUser } from "@fortawesome/free-solid-svg-icons";
 // import ChartComponent from "../ChartComponent/ChartComponent";
@@ -128,9 +129,15 @@ const Dashboard = ({ footerRef }) => {
 
     return (
       <section className="py-12 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+          initial={{ opacity: 0 }} // Initially hidden
+          whileInView={{ opacity: 1 }} // Fade in when in view
+          viewport={{ once: true }} // Trigger animation once when it comes into view
+          transition={{ duration: 1 }} // Animation duration
+        >
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-gray-900">
+            <h2 className="text-3xl font-bold text-[#7ab2d3]">
               Health Features
             </h2>
             <p className="mt-2 text-lg text-gray-600">
@@ -140,9 +147,13 @@ const Dashboard = ({ footerRef }) => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <div
+              <motion.div
                 key={index}
-                className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-md"
+                className="flex flex-col items-center text-center p-6 bg-white rounded-lg shadow-lg transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
+                initial={{ opacity: 0, y: 20 }} // Initially hidden and slightly down
+                whileInView={{ opacity: 1, y: 0 }} // Fade in and move up when in view
+                viewport={{ once: true }} // Trigger animation once when in view
+                transition={{ delay: index * 0.1, duration: 0.6 }} // Staggered animation for cards
               >
                 {/* Replace the emoji display with an <img> tag */}
                 <div className="mb-4">
@@ -156,10 +167,10 @@ const Dashboard = ({ footerRef }) => {
                   {feature.title}
                 </h3>
                 <p className="text-gray-600">{feature.description}</p>
-              </div>
+              </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
     );
   };
@@ -246,93 +257,114 @@ const Dashboard = ({ footerRef }) => {
         <div className="absolute inset-0 bg-black opacity-50"></div>
       </div> */}
 
-      <div className="relative hero-section bg-cover bg-center h-[400px] flex items-center">
-        <div className="absolute inset-0 bg-black opacity-50"></div>
+      <motion.div
+        className="relative hero-section bg-cover bg-center h-[400px] flex items-center"
+        initial={{ opacity: 0 }} // Initially hidden
+        animate={{ opacity: 1 }} // Fade in when it comes into view
+        transition={{ duration: 1.2 }} // Animation duration for section
+      >
+        <div className="absolute inset-0 bg-black opacity-70"></div>
         <div className="relative z-10 text-center">
-          <div className="flex justify-center space-x-10">
-            {" "}
-            {/* Adjusted space between cards */}
-            <div className="flex flex-col items-center">
+          <div className="flex flex-wrap justify-center space-x-10 md:space-x-6">
+            {/* Card 1 */}
+            <motion.div
+              className="flex flex-col items-center mb-6 md:mb-0"
+              initial={{ opacity: 0, y: 20 }} // Initially hidden and slightly down
+              whileInView={{ opacity: 1, y: 0 }} // Fade in and move up when in view
+              viewport={{ once: true }} // Trigger animation once when in view
+              transition={{ delay: 0.3, duration: 0.8 }} // Staggered animation for cards
+            >
               <div
                 className="icon-circle mb-2 w-16 h-16 rounded-full shadow-lg shadow-gray-300/50"
                 style={{ marginLeft: "-10px" }}
               >
-                {" "}
-                {/* Shifted left with negative margin */}
                 <img
                   src="/img/heart-rate-monitor.png"
                   alt="Population Health"
                   className="w-16 h-16 mx-auto"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-white text-sm md:text-lg">
                 Personalized Health Tracking
               </h3>
-              <p className="text-center text-gray-200 text-sm">
+              <p className="text-center text-white text-xs md:text-sm">
                 Personalized insights to track your health
                 <br /> journey and key wellness milestones.
               </p>
-            </div>
-            <div className="flex flex-col items-center">
+            </motion.div>
+
+            {/* Card 2 */}
+            <motion.div
+              className="flex flex-col items-center mb-6 md:mb-0"
+              initial={{ opacity: 0, y: 20 }} // Initially hidden and slightly down
+              whileInView={{ opacity: 1, y: 0 }} // Fade in and move up when in view
+              viewport={{ once: true }} // Trigger animation once when in view
+              transition={{ delay: 0.5, duration: 0.8 }} // Staggered animation for cards
+            >
               <div
                 className="icon-circle mb-2 w-16 h-16 rounded-full shadow-lg shadow-gray-300/50"
                 style={{ marginLeft: "-10px" }}
               >
-                {" "}
-                {/* Shifted left with negative margin */}
                 <img
-                  src="/img/tracking.png"
+                  src="/img/pulse.png"
                   alt="Public Policy"
                   className="w-16 h-16 mx-auto"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-white text-sm md:text-lg">
                 Real-Time Monitoring
               </h3>
-              <p className="text-center text-gray-200 text-sm">
+              <p className="text-center text-white text-xs md:text-sm">
                 Stay on top of your health with real-time data, from
                 <br /> heart rate to sleep quality, for a better well-being.
               </p>
-            </div>
-            <div className="flex flex-col items-center">
+            </motion.div>
+
+            {/* Card 3 */}
+            <motion.div
+              className="flex flex-col items-center mb-6 md:mb-0"
+              initial={{ opacity: 0, y: 20 }} // Initially hidden and slightly down
+              whileInView={{ opacity: 1, y: 0 }} // Fade in and move up when in view
+              viewport={{ once: true }} // Trigger animation once when in view
+              transition={{ delay: 0.7, duration: 0.8 }} // Staggered animation for cards
+            >
               <div
                 className="icon-circle mb-2 w-16 h-16 rounded-full shadow-lg shadow-gray-300/50"
                 style={{ marginLeft: "-10px" }}
               >
-                {" "}
-                {/* Shifted left with negative margin */}
                 <img
                   src="/img/medical-history.png"
                   alt="Health Surveillance"
                   className="w-16 h-16 mx-auto"
                 />
               </div>
-              <h3 className="text-xl font-bold text-white">
+              <h3 className="text-xl font-bold text-white text-sm md:text-lg">
                 Insightful Health Reports
               </h3>
-              <p className="text-center text-gray-200 text-sm">
+              <p className="text-center text-white text-xs md:text-sm">
                 Receive detailed health reports with insights into your habits,
-                <br /> empowering you to make data-driven health decisions
+                <br /> empowering you to make data-driven health decisions.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
-      </div>
+      </motion.div>
 
       <div className="why-we-stand-out-section bg-white py-12">
-        <div className="text-center">
-          <h2 className="text-3xl font-semibold">WHY WE STAND OUT</h2>
-          <p className="mt-4 text-lg">
+        <div className="text-center px-4 md:px-0">
+          <h2 className="text-2xl md:text-3xl font-semibold text-grey-800 font-bold">
+            WHY WE STAND OUT
+          </h2>
+          <p className="mt-4 text-base md:text-lg mx-auto max-w-4xl">
             Our health monitoring app leverages advanced technology to track and
-            analyze
-            <br /> your personal health data, providing insights into your
-            well-being. As <br />
-            healthcare complexities rise, our app empowers users to understand
-            their health journey <br />
-            better and make informed decisions for a healthier life
+            analyze your personal health data, providing insights into your
+            well-being. As healthcare complexities rise, our app empowers users
+            to understand their health journey better and make informed
+            decisions for a healthier life.
           </p>
         </div>
-        {/* Rest of the "Why We Stand Out" section */}
+
+        {/* Divider Line with Icon */}
         <div className="flex items-center justify-center py-4">
           <span className="line"></span> {/* Left line */}
           <img
@@ -343,12 +375,11 @@ const Dashboard = ({ footerRef }) => {
           <span className="line"></span> {/* Right line */}
         </div>
 
+        {/* Service Items */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-4 mt-12">
-          <div className="service-item mr-10">
-            <div className="flex items-start">
-              <div className="service-icon ml-16">
-                {" "}
-                {/* Added margin-left of 4rem */}
+          <div className="service-item">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <div className="service-icon mb-4 mx-auto md:mx-0">
                 <img
                   src="/img/assistance.png"
                   alt="Software as a Service"
@@ -356,12 +387,10 @@ const Dashboard = ({ footerRef }) => {
                 />
               </div>
               <div className="ml-2">
-                {" "}
-                {/* Adjusted margin-left for text container */}
-                <h3 className="text-xl font-bold">
+                <h3 className="text-lg md:text-xl font-bold">
                   HEALTH MONITORING AS A SERVICE
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm md:text-base">
                   Our health monitoring app provides continuous updates,
                   blending advanced technology, health insights, and precise
                   data analysis to empower you with the latest tools for
@@ -371,11 +400,9 @@ const Dashboard = ({ footerRef }) => {
             </div>
           </div>
 
-          <div className="service-item mr-10">
-            <div className="flex items-start">
-              <div className="service-icon ml-16">
-                {" "}
-                {/* Added margin-left of 4rem */}
+          <div className="service-item">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <div className="service-icon mb-4 mx-auto md:mx-0">
                 <img
                   src="/img/heet.png"
                   alt="Healthcare Facility Network"
@@ -383,26 +410,22 @@ const Dashboard = ({ footerRef }) => {
                 />
               </div>
               <div className="ml-2">
-                {" "}
-                {/* Adjusted margin-left for text container */}
-                <h3 className="text-xl font-bold">
+                <h3 className="text-lg md:text-xl font-bold">
                   EXPANSIVE HEALTHCARE NETWORK
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm md:text-base">
                   Our extensive healthcare data network offers comprehensive
                   insights, drawing from diverse sources to empower faster,
                   cost-effective analysis and actionable insights for your
-                  health journey
+                  health journey.
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="service-item mr-10">
-            <div className="flex items-start">
-              <div className="service-icon ml-16">
-                {" "}
-                {/* Added margin-left of 4rem */}
+          <div className="service-item">
+            <div className="flex flex-col items-center md:items-start text-center md:text-left">
+              <div className="service-icon mb-4 mx-auto md:mx-0">
                 <img
                   src="/img/medical.png"
                   alt="Big Data"
@@ -410,16 +433,14 @@ const Dashboard = ({ footerRef }) => {
                 />
               </div>
               <div className="ml-2">
-                {" "}
-                {/* Adjusted margin-left for text container */}
-                <h3 className="text-xl font-bold">
+                <h3 className="text-lg md:text-xl font-bold">
                   BIG DATA FOR BETTER HEALTH
                 </h3>
-                <p className="text-sm">
+                <p className="text-sm md:text-base">
                   With robust data processing capabilities, our app collects and
                   analyzes extensive health data daily, equipping you with
                   powerful insights. Leverage our experience to make impactful
-                  decisions that enhance your health journey
+                  decisions that enhance your health journey.
                 </p>
               </div>
             </div>
