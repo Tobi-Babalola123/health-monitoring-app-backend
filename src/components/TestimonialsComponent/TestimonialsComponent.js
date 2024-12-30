@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { motion } from "framer-motion"; // Importing motion for animations
 import LottieAnimationComponent from "../LottieAnimationComponent"; // Import the Lottie component
 import "./TestimonialsComponent.css"; // Custom styles
@@ -68,14 +69,18 @@ const TestimonialsComponent = () => {
         </motion.ul>
 
         {/* Get Started Button Animation */}
-        <motion.button
-          className="get-started-btn"
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1.2, duration: 0.8 }}
-        >
-          Get Started
-        </motion.button>
+        <Link to="/signup">
+          {" "}
+          {/* Replace with your route */}
+          <motion.button
+            className="get-started-btn bg-[#7ab2d3]"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.2, duration: 0.8 }}
+          >
+            Get Started
+          </motion.button>
+        </Link>
       </div>
 
       <div className="animation">

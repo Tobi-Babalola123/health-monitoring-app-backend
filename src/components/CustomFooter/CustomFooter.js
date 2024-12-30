@@ -7,7 +7,7 @@ const CustomFooter = React.forwardRef((props, ref) => {
       <div className="footer-container">
         {/* About Section */}
         <div className="footer-section about">
-          <h3>About Health Monitoring</h3>
+          <h3>About Healthsphere</h3>
           <p className="health-details">
             <span>Our mission:</span> Provide services that focus healthcare
             resources on existing and emergent threats to community health.
@@ -33,7 +33,7 @@ const CustomFooter = React.forwardRef((props, ref) => {
           <p className="health-details">
             Support email:{" "}
             <a href="mailto:support@health-monitorings.com">
-              support@health-monitorings.com
+              support@healthsphere.com
             </a>
           </p>
           <p className="health-details">Emergency support: 1 (814) 230-5071</p>
@@ -103,7 +103,7 @@ const CustomFooter = React.forwardRef((props, ref) => {
           <p className="health-details">
             Inquiries:{" "}
             <a href="mailto:inquiries@health-monitorings.com">
-              inquiries@health-monitorings.com
+              inquiries@healthsphere.com
             </a>
           </p>
 
@@ -120,7 +120,7 @@ const CustomFooter = React.forwardRef((props, ref) => {
 
       {/* Footer Bottom */}
       <div className="footer-bottom">
-        <p>&copy; 2006-2020 Health Monitoring Systems. All rights reserved.</p>
+        <p>&copy; 2024 HealthSphere. All rights reserved.</p>
         <div className="social-media-icons">
           <a
             href="https://facebook.com"

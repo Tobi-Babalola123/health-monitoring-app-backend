@@ -20,7 +20,7 @@ const CompanyPage = () => {
             alt="Icon"
             className="w-50 h-48 mb-4" // Adjust size of the image as needed
           />
-          <h2 className="text-teal-600 text-2xl font-semibold">
+          <h2 className="text-[#7ab2d3] text-2xl font-semibold">
             Real-Time Health Insights
           </h2>
           <p className="text-gray-500">
@@ -36,7 +36,7 @@ const CompanyPage = () => {
 
         {/* Right Column */}
         <div className="lg:w-1/2 space-y-4">
-          <h2 className="text-teal-600 text-2xl font-semibold">
+          <h2 className="text-[#7ab2d3] text-2xl font-semibold">
             Trusted Health Solutions
           </h2>
           <p className="text-gray-500">
@@ -113,7 +113,7 @@ const CompanyPage = () => {
       </section>
 
       <section className="bg-gray-100 py-12 px-4">
-        <h2 className="text-3xl font-bold text-center text-teal-600 mb-4">
+        <h2 className="text-3xl font-bold text-center text-[#7ab2d3] mb-4">
           Our Development Team
         </h2>
         <p className="text-center text-gray-700 mb-8 max-w-2xl mx-auto">
@@ -182,7 +182,7 @@ const CompanyPage = () => {
       </section>
 
       <section className="flex flex-col items-center p-6 bg-white text-gray-700">
-        <h2 className="text-teal-600 text-2xl font-bold mb-2">CONTACT US</h2>
+        <h2 className="text-[#7ab2d3] text-2xl font-bold mb-2">CONTACT US</h2>
         <p className="text-center text-gray-600 max-w-2xl mb-6">
           Health Monitoring is always interested in discussing possible
           partnerships with healthcare and public health organizations.

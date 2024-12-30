@@ -24,10 +24,12 @@ const SignUp = () => {
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 px-4">
       <header className="mb-8 text-center">
         <img
-          src="/img/logo12.png"
+          src="/img/heealth.png"
           alt="Heads Up Logo"
-          className="mx-auto mb-4 w-20 md:w-24"
+          className="mx-auto mb-4"
+          style={{ width: "120px" }}
         />
+
         <h2 className="text-xl md:text-2xl font-bold">
           Next Step: Sign up as ...
         </h2>
@@ -54,7 +56,7 @@ const SignUp = () => {
             Choose this option if you would like to register as an individual.
           </p>
           <button
-            className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-200 text-sm md:text-base"
+            className="bg-[#134b70] hover:bg-[#7ab2d3] text-white py-2 px-4 rounded  transition duration-200 text-sm md:text-base"
             onClick={handleSubmit}
           >
             START NOW
@@ -83,7 +85,7 @@ const SignUp = () => {
             Choose this option if you would like to manage multiple clients.
           </p>
           <button
-            className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition duration-200 text-sm md:text-base"
+            className="bg-[#7ab2d3] text-white py-2 px-4 rounded hover:bg-[#134b70] transition duration-200 text-sm md:text-base"
             onClick={handleSubmit}
           >
             START NOW

@@ -42,9 +42,9 @@ const Navbar = () => {
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
         <img
-          src="/img/logo12.png"
+          src="/img/heealth.png"
           alt="Health Monitoring Logo"
-          className="h-10"
+          className="h-[84px] w-[84px]"
         />
 
         {/* Desktop Navlinks */}
@@ -111,7 +111,7 @@ const Navbar = () => {
           </li>
           <li>
             <Link to="/signup">
-              <button className="px-4 py-2 text-sm bg-gray-800 text-white rounded hover:bg-[#7ab2d3] hover:text-gray-800 transition">
+              <button className="px-4 py-2 text-sm bg-[#7ab2d3] text-white rounded hover:bg-gray-800 hover:text-white transition">
                 Get Started
               </button>
             </Link>

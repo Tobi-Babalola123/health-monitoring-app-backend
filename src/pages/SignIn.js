@@ -42,7 +42,7 @@ const Signin = () => {
       {/* Left Side: Form */}
       <div className="flex-1 flex flex-col justify-start items-center bg-white p-8 shadow-md overflow-auto scrollbar-hidden">
         <img
-          src="/img/logo12.png"
+          src="/img/heealth.png"
           alt="Health-monitoring-logo"
           className="w-24 h-auto"
         />
@@ -74,7 +74,7 @@ const Signin = () => {
             </Link>
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+              className="bg-[#134b70] hover:bg-[#7ab2d3] text-white py-2 px-4 rounded"
             >
               Sign In
             </button>

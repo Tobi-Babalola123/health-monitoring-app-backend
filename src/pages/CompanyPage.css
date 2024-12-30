@@ -27,7 +27,7 @@ body {
 .section-header {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #007b9c; /* Adjust this color as needed */
+  color: #7ab2d3; /* Adjust this color as needed */
   text-align: center;
 }
 
@@ -105,7 +105,7 @@ body {
 }
 
 .surveillance-item h3 {
-  color: #2a9d8f; /* Adjust for your theme */
+  color: #7ab2d3; /* Adjust for your theme */
   margin-bottom: 0.75rem;
 }
 
@@ -156,7 +156,7 @@ body {
 .nas-text-container h2 {
   font-size: 28px;
   margin-bottom: 20px;
-  color: #007b9c; /* Adjusted color to match branding */
+  color: #7ab2d3; /* Adjusted color to match branding */
 }
 
 .nas-text {
@@ -203,7 +203,7 @@ body {
   justify-content: center;
   align-items: center;
   font-size: 28px;
-  color: #007b9c;
+  color: #7ab2d3;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
   flex-shrink: 0; /* Prevents shrinking in flex containers */
 }
@@ -212,7 +212,7 @@ body {
 .recommendation h3 {
   font-size: 20px;
   margin-bottom: 5px;
-  color: #2a9d8f;
+  color: #7ab2d3;
 }
 
 .recommendation p {
@@ -280,7 +280,7 @@ body {
 .health-item h3 {
   font-size: 1.25rem;
   margin: 15px;
-  color: #2a9d8f;
+  color: #7ab2d3;
 }
 
 .health-item p {

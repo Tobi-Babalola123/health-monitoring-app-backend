@@ -27,7 +27,7 @@ body {
 .section-header {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #007b9c; /* Adjust this color as needed */
+  color: #7ab2d3; /* Adjust this color as needed */
   text-align: center;
 }
 
@@ -88,7 +88,7 @@ body {
 .health-surveillance h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
-  color: #005555; /* Change to your brand color */
+  color: #7ab2d3; /* Change to your brand color */
 }
 
 .surveillance-item {
@@ -212,7 +212,7 @@ body {
 .recommendation h3 {
   font-size: 20px;
   margin-bottom: 5px;
-  color: #2a9d8f;
+  color: #101c1b;
 }
 
 .recommendation p {
@@ -280,7 +280,7 @@ body {
 .health-item h3 {
   font-size: 1.25rem;
   margin: 15px;
-  color: #2a9d8f;
+  color: #000000;
 }
 
 .health-item p {

@@ -60,7 +60,7 @@ const PersonalUserSignup = () => {
       {/* Left Side: Form */}
       <div className="flex-1 flex flex-col justify-start items-center bg-white p-8 shadow-md overflow-auto scrollbar-hidden">
         <img
-          src="/img/logo12.png"
+          src="/img/heealth.png"
           alt="Heads Up Logo"
           className="w-24 h-auto"
         />
@@ -144,7 +144,7 @@ const PersonalUserSignup = () => {
             </button>
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded"
+              className="bg-[#7ab2d3] hover:bg-[#134b70] text-white py-2 px-4 rounded"
             >
               Create Account
             </button>

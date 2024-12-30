@@ -16,7 +16,7 @@
 }
 
 span {
-  color: #1e78b4;
+  color: #7ab2d3;
 }
 
 /* Footer section styling */
@@ -52,7 +52,7 @@ span {
 
 .newsletter-form button {
   width: 100%; /* Forces button to full width */
-  background-color: #134b70;
+  background-color: #7ab2d3;
   color: #fff;
   padding: 12px;
   cursor: pointer;
@@ -62,13 +62,13 @@ span {
 }
 
 .newsletter-form button:hover {
-  background-color: #508c9b;
+  background-color: #10252a;
 }
 
 .footer-section h3 {
   font-size: 1.2rem;
   margin-bottom: 15px;
-  color: #1e78b4;
+  color: #7ab2d3;
 }
 
 .company-address {
@@ -82,14 +82,14 @@ span {
 }
 
 .social-media-icons a {
-  color: #134b70; /* Change to your preferred color */
+  color: #7ab2d3; /* Change to your preferred color */
   margin: 0 10px; /* Space between icons */
   font-size: 24px; /* Icon size */
   text-decoration: none; /* Remove underline */
 }
 
 .social-media-icons a:hover {
-  color: #508c9b;
+  color: #264952;
 }
 
 .footer-section p,
@@ -111,7 +111,7 @@ span {
 }
 
 .footer-section a:hover {
-  color: #508c9b;
+  color: #3e8fa4;
   text-decoration: underline;
 }
 
