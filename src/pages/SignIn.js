@@ -72,12 +72,14 @@ const Signin = () => {
             <Link to="/forgot-password" className="text-sm text-blue-600">
               Forgot password?
             </Link>
-            <button
-              type="submit"
-              className="bg-[#134b70] hover:bg-[#7ab2d3] text-white py-2 px-4 rounded"
-            >
-              Sign In
-            </button>
+            <Link to="/dashboard">
+              <button
+                type="submit"
+                className="bg-[#134b70] hover:bg-[#7ab2d3] text-white py-2 px-4 rounded"
+              >
+                Sign In
+              </button>
+            </Link>
           </div>
 
           {message && (

@@ -41,11 +41,13 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
-        <img
-          src="/img/heealth.png"
-          alt="Health Monitoring Logo"
-          className="h-[84px] w-[84px]"
-        />
+        <Link to="/">
+          <img
+            src="/img/heealth.png"
+            alt="Health Monitoring Logo"
+            className="h-[84px] w-[84px]"
+          />
+        </Link>
 
         {/* Desktop Navlinks */}
         <ul className="hidden md:flex space-x-6 items-center text-sm font-semibold">

@@ -13,7 +13,7 @@ import PricingComponent from "../PricingComponent/PricingComponent";
 import axios from "axios";
 import AICardComponent from "../AiCardComponent.js/AICardComponent";
 import Navbar from "../Navbar/Navbar";
-import "./Dashboard.css";
+import "./Home.css";
 
 // Add the fetchHealthData function
 const fetchHealthData = async () => {
@@ -265,7 +265,7 @@ const Dashboard = ({ footerRef }) => {
       >
         <div className="absolute inset-0 bg-black opacity-70"></div>
         <div className="relative z-10 text-center">
-          <div className="flex flex-wrap justify-center space-x-10 md:space-x-6">
+          <div className="flex flex-wrap justify-center space-x-10 md:space-x-6 mt-12 md:mt-0">
             {/* Card 1 */}
             <motion.div
               className="flex flex-col items-center mb-6 md:mb-0"
@@ -352,7 +352,7 @@ const Dashboard = ({ footerRef }) => {
 
       <div className="why-we-stand-out-section bg-white py-12">
         <div className="text-center px-4 md:px-0">
-          <h2 className="text-2xl md:text-3xl font-semibold text-grey-800 font-bold">
+          <h2 className="text-3xl font-bold text-[#7ab2d3]">
             WHY WE STAND OUT
           </h2>
           <p className="mt-4 text-base md:text-lg mx-auto max-w-4xl">

@@ -3,19 +3,25 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem;
-  max-width: 1200px; /* Set a max-width for the section */
-  margin: 0 auto; /* Center the section on the page */
+  padding: 2rem 4rem;
+  max-width: 1400px; /* Set a max-width for the section */
+  margin: 0 auto;
+  color: #333;
+  background: linear-gradient(
+    135deg,
+    #f0f9ff,
+    #c2e9fb
+  ); /* 👈 soft blue gradient */
 }
 
 /* Content area (text and button) */
 .contents {
   flex: 1;
-  padding-right: 2rem; /* Add some padding to separate from the animation */
+  /* padding-right: 2rem; */
   max-width: 600px; /* Set a max width for the text block */
   display: block;
   justify-content: space-between;
-  padding: 20px;
+  /* padding: 20px; */
   /* max-width: 100%; */
   margin: 0 auto;
   align-items: flex-start;
@@ -26,6 +32,7 @@
   flex: 1;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* Heading styling */

@@ -142,12 +142,14 @@ const PersonalUserSignup = () => {
             >
               Back
             </button>
-            <button
-              type="submit"
-              className="bg-[#7ab2d3] hover:bg-[#134b70] text-white py-2 px-4 rounded"
-            >
-              Create Account
-            </button>
+            <Link to="/userdashboard">
+              <button
+                type="submit"
+                className="bg-[#7ab2d3] hover:bg-[#134b70] text-white py-2 px-4 rounded"
+              >
+                Create Account
+              </button>
+            </Link>
           </div>
 
           {message && (
