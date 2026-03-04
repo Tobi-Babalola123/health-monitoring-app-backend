@@ -1,10 +1,5 @@
 import React, { useRef } from "react"; // Correctly import useRef here
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  useLocation,
-} from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import Home from "./components/Dashboard/Home";
 import CustomFooter from "./components/CustomFooter/CustomFooter";
 import SignUp from "./pages/SignUp";
@@ -16,7 +11,7 @@ import PersonalUserDetails from "./pages/PersonalUserDetails";
 import UserDashboard from "./pages/UserDashboard";
 import Dashboard from "./pages/Dasboard";
 import { Buffer } from "buffer";
-import ReactNotification from "react-notifications-component";
+// import ReactNotification from "react-notifications-component";
 import "react-notifications-component/dist/theme.css";
 window.Buffer = Buffer;
 
@@ -29,7 +24,7 @@ const App = () => {
     Spotlight,
     PersonalUserSignup,
     PersonalUserDetails,
-    UserDashboard
+    UserDashboard,
   );
 
   const location = useLocation();

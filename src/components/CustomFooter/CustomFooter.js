@@ -38,24 +38,24 @@ const CustomFooter = React.forwardRef((props, ref) => {
           </p>
           <p className="health-details">Emergency support: 1 (814) 230-5071</p>
           <p className="health-details">
-            Additional guidance: <a href="#">User Manual</a>
+            Additional guidance: <a href="/">User Manual</a>
           </p>
           <h3>Site Maps</h3>
           <ul className="site-map-links">
             <li>
-              <a href="#">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="#">Features</a>
+              <a href="/">Features</a>
             </li>
             <li>
-              <a href="#">Help Center</a>
+              <a href="/">Help Center</a>
             </li>
             <li>
-              <a href="#">About Us</a>
+              <a href="/">About Us</a>
             </li>
             <li>
-              <a href="#">Blog</a>
+              <a href="/">Blog</a>
             </li>
           </ul>
         </div>
@@ -68,28 +68,28 @@ const CustomFooter = React.forwardRef((props, ref) => {
           <h3>Health Insights & Updates</h3>
           <ul className="news-links">
             <li>
-              <a href="#">Health News</a>
+              <a href="/">Health News</a>
             </li>
             <li>
-              <a href="#">Health Data Reports</a>
+              <a href="/">Health Data Reports</a>
             </li>
             <li>
-              <a href="#">Wellness Tips</a>
+              <a href="/">Wellness Tips</a>
             </li>
             <li>
-              <a href="#">Latest Updates</a>
+              <a href="/">Latest Updates</a>
             </li>
             <li>
-              <a href="#">Job Opportunities</a>
+              <a href="/">Job Opportunities</a>
             </li>
             <li>
-              <a href="#">Resources</a>
+              <a href="/">Resources</a>
             </li>
             <li>
-              <a href="#">Research Publications</a>
+              <a href="/">Research Publications</a>
             </li>
             <li>
-              <a href="#">Health Trends</a>
+              <a href="/">Health Trends</a>
             </li>
           </ul>
         </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+// import { HiMenuAlt3, HiX } from "react-icons/hi";
 // import DropdownMenu from "./DropdownMenu";
 import HealthCard from "../components/HealthCard";
 import { Link } from "react-router-dom";
@@ -85,7 +85,7 @@ const UserDashboard = () => {
       const updatedCards = cards.map((card) =>
         card.id === cardId
           ? { ...card, title: "Updated Health Card" } // Example update
-          : card
+          : card,
       );
       setCards(updatedCards);
     }
@@ -316,21 +316,21 @@ const Header = ({
   const [nestedDropdown, setNestedDropdown] = useState(null);
   const [selectedItem, setSelectedItem] = useState(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const [steps, setSteps] = useState("");
+  // const [steps, setSteps] = useState("");
   const [notes, setNotes] = useState("");
   const [date, setDate] = useState({ month: "Nov", day: 10, year: 2024 });
   const [daysInMonth, setDaysInMonth] = useState([]);
   const [dataValue, setDataValue] = useState("");
-  const [editingCard, setEditingCard] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const [setEditingCard] = useState(null);
+  const [setSelectedCategory] = useState(null);
 
-  const handleEditCard = (cardId) => {
-    const cardToEdit = cards.find((card) => card.id === cardId);
-    if (cardToEdit) {
-      setEditingCard(cardToEdit); // Set the card data for editing
-      setModalOpen(true); // Open the modal
-    }
-  };
+  // const handleEditCard = (cardId) => {
+  //   const cardToEdit = cards.find((card) => card.id === cardId);
+  //   if (cardToEdit) {
+  //     setEditingCard(cardToEdit); // Set the card data for editing
+  //     setModalOpen(true); // Open the modal
+  //   }
+  // };
 
   const handleSave = () => {
     // Prepare data to be added
@@ -489,12 +489,12 @@ const Header = ({
   ];
 
   // Function to handle category selection
-  const handleCategorySelect = (categoryTitle) => {
-    const category = dataCategories.find(
-      (category) => category.title === categoryTitle
-    );
-    setSelectedCategory(category); // Set the selected category
-  };
+  // const handleCategorySelect = (categoryTitle) => {
+  //   const category = dataCategories.find(
+  //     (category) => category.title === categoryTitle,
+  //   );
+  //   setSelectedCategory(category); // Set the selected category
+  // };
 
   // Function to handle adding a new card
   // const handleAddCard = () => {
